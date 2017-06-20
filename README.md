@@ -18,6 +18,10 @@ _____________________________________________________________
 7. git checkout master
 8. git pull
 9. git checkout name-of-the-branch-you-created
+10. git merge master (if there are any conflicts, you will fix them at this point).
+11. git push -u origin name-of-the-branch-you-created
+12. Do a 'pull request' on Github.
+
 
 ###YouTube Clone - React With Redux
 
