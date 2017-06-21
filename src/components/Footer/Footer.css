@@ -1,0 +1,247 @@
+.main_footer_section{
+    height: 150px;
+    width: 100%;
+    border-top: 1px solid #e3e3e3;
+    position: relative;
+    /*background: lightcoral;*/
+    /*border: 2px solid black;*/
+    
+}
+#first_row{
+    height: 35%;
+    width: 95%;
+    position: absolute;
+    top: 0px;
+    left: 2.5%;
+    /*background: lightcyan;*/
+    border-bottom: 1px solid #e3e3e3; 
+    position: relative;
+}
+.logo{
+    height: 51px;
+    width: 100px;
+    /*border: 2px solid black;*/
+    position: absolute;
+    left: 0;
+    z-index: 1;
+}
+.logo img{
+    position: absolute;
+    top: -26px;
+    height: 100px;
+}
+.language_select{
+    height: 30px;
+    width: 165px;
+    /*border: 2px solid white;*/
+    position: absolute;
+    left: 100px;
+    top: calc(50% - 15px);
+    border-radius: 3px;
+    background: #eeeeee;
+    border: 1px solid #b8b8b8;
+       
+}
+.language_select:hover{
+    cursor:pointer;
+    background: #dddddd;
+    border: 1px solid #999999;
+}
+.language_select p{
+    position: absolute;
+    top: 9px;
+    right: 25px;
+    font-size: 11px;
+    font-family: 'Muli', sans-serif;
+}
+.language_select #language_img{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) 0 -150px;
+    background-size: auto;
+    width: 30px;
+    height: 20px;
+    z-index: 100;
+    border-bottom: none;
+    position: absolute;
+    top: 9px;
+    left: 8px;
+    opacity: 0.5;
+}
+.language_select img{
+    height: 20px;
+    position: absolute;
+    right: 2px;
+    top: 4px;
+}
+.location_select{
+    height: 30px;
+    width: 196px;
+    /*border: 2px solid white;*/
+    position: absolute;
+    left: 275px;
+    top: calc(50% - 15px);
+    border-radius: 3px;
+    background: #eeeeee;
+    border: 1px solid #b8b8b8
+    
+}
+.location_select:hover{
+    cursor:pointer;
+    background: #dddddd;
+    border: 1px solid #999999;
+}
+.location_select p{
+    padding-top: 9px;
+    padding-left: 8px;
+    font-size: 11px;
+    font-family: 'Muli', sans-serif;
+}
+.location_select img{
+    height: 20px;
+    position: absolute;
+    right: 4px;
+    top: 4px;
+}
+.restricted_settings{
+    height: 30px;
+    width: 136px;
+    /*border: 2px solid white;*/
+    position: absolute;
+    left: 480px;
+    top: calc(50% - 15px);
+    border-radius: 3px;
+    background: #eeeeee;
+    border: 1px solid #b8b8b8
+
+}
+.restricted_settings:hover{
+    cursor:pointer;
+    background: #dddddd;
+    border: 1px solid #999999;
+}
+.restricted_settings p{
+    padding-top: 9px;
+    padding-left: 8px;
+    font-size: 11px;
+    font-family: 'Muli', sans-serif;
+} 
+.restricted_settings img{
+    height: 20px;
+    position: absolute;
+    right: 2px;
+    top: 4px;
+}
+.history_bttn{
+    height: 30px;
+    width: 72px;
+    /*border: 2px solid white;*/
+    position: absolute;
+    left: 625px;
+    top: calc(50% - 15px);
+    border-radius: 3px;
+    background: #eeeeee;
+    border: 1px solid #b8b8b8
+}
+.history_bttn:hover{
+    cursor:pointer;
+    background: #dddddd;
+    border: 1px solid #999999;
+}
+.history_bttn p{
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    font-size: 11px;
+    font-family: 'Muli', sans-serif;
+} 
+.history_bttn #hourglass{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -926px -182px;
+    background-size: auto;
+    width: 12px;
+    height: 15px;
+    position: absolute;
+    left: 6px;
+    top: 7px;
+    opacity: 0.5;
+}
+.help_bttn{
+    height: 30px;
+    width: 62px;
+    /*border: 2px solid white;*/
+    position: absolute;
+    left: 708px;
+    top: calc(50% - 15px);
+    border-radius: 3px;
+    background: #eeeeee;
+    border: 1px solid #b8b8b8
+}
+.help_bttn:hover{
+    cursor:pointer;
+    background: #dddddd;
+    border: 1px solid #999999;
+}
+.help_bttn p{
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    font-size: 11px;
+    font-family: 'Muli', sans-serif;
+} 
+.help_bttn #help_icon{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -605px -143px;
+    background-size: auto;
+    width: 15px;
+    height: 16px;
+    position: absolute;
+    top: 6px;
+    left: 7px;
+    opacity: 0.5;
+}
+
+
+#second_row{
+    /*border: 2px solid coral;*/
+    width: 500px;
+    padding-top: 20px;
+    position: absolute;
+    top: 50px;
+    left: 2.5%;
+    z-index: 2;
+}
+#second_row ul{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: 12px;
+    font-weight: bold;
+    font-family: 'Muli', sans-serif;
+    color: #333333;
+}
+
+#second_row li:hover{
+    color: #167ac6;
+    border-bottom: 1px solid #167ac6;
+    cursor: pointer;
+}
+
+#third_row{
+    /*border: 2px solid lime;*/
+    width: 523px;
+    padding-top: 20px;
+    position: absolute;
+    top: 75px;
+    left: 2.5%;
+}
+
+#third_row ul{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    font-size: 11px;
+    font-family: 'Muli', sans-serif;
+    color: #666666;
+}
+#third_row li:hover:not(:last-child){
+    color: #167ac6;
+    border-bottom: 1px solid #167ac6;
+    cursor: pointer;
+}
