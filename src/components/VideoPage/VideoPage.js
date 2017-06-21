@@ -8,6 +8,13 @@ import RecommendedVideosContainer from './RecommendedVideosContainer/Recommended
 import './VideoPage.css';
 
 class VideoPage extends Component {
+    constructor(props){
+        super(props);
+        
+        this.state = {
+            videoId: '0tuK0sk_D1M'
+        }
+    }
 
     render() {
         return (
@@ -18,7 +25,7 @@ class VideoPage extends Component {
                     <div className='iframe_placeholder'>
                         <iframe 
                         className='iframe'
-                        src='http://www.youtube.com/embed/0tuK0sk_D1M'>
+                        src={ 'http://www.youtube.com/embed/' + this.state.videoId }>
                         </iframe>
                     </div>
 
@@ -42,3 +49,6 @@ class VideoPage extends Component {
 }
 
 export default VideoPage;
+
+
+// 'https://www.googleapis.com/youtube/v3/videos?id=i9MHigUZKEM&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet'
