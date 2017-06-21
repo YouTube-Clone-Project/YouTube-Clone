@@ -27,21 +27,6 @@
     top: 10px;
 }
 
-.comments_wrapper{
-    width: 100%;
-    height: 130px;
-    position: relative;
-}
-
-.comments_container{
-    width: 855px;
-    height: 120px;
-    background: #fff;
-    padding: 10px 10px 10px 10px;
-    position: absolute;
-    left: 35px;
-}
-
 .more_videos_wrapper{
     width: 430px;
     height: 1800px;
