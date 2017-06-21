@@ -1,6 +1,12 @@
-# Team Instructions
+## Team Instructions
 
-## In The Morning
+# To Start The First Day
+
+1. Fork and clone this repo
+2. run 'npm i' in the terminal / Git Bash
+3. run 'npm start' in the terminal / Git Bash
+
+# Daily Steps For Working On This Repo
 
 1. Make sure you are on your computer's master branch.
 2. git pull.
@@ -9,6 +15,7 @@
 
 3. git checkout -b new-branch-name (pick a name for your new branch)
 4. Do your normal work on your computer, but do everything on your new branch.
+
 5. As you go, use add . & commit -m '' like normal to save your work to your new branch that you have created for the day. 
 
 ## To Work On The Same Feature You've Been Working On
@@ -29,6 +36,7 @@ _____________________________________________________________
 
 
 # YouTube Clone - React With Redux
+
 
 ## Introduction
 
