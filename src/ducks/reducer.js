@@ -6,8 +6,7 @@ const GET_YOUTUBE_VIDEO_REJECTED = 'GET_YOUTUBE_VIDEO_REJECTED';
 
 const initialState = {
   loading: false,
-  videoId: '',
-  testId: '0tuK0sk_D1M'
+  videoId: '0tuK0sk_D1M'
 }
 
 export default function reducer(state = initialState, action) {

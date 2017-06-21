@@ -12,9 +12,7 @@ class VideoPage extends Component {
     constructor(props){
         super(props);
         
-        this.state = {
-            videoId: '0tuK0sk_D1M'
-        }
+        this.state = {}
     }
 
     render() {
@@ -29,20 +27,18 @@ class VideoPage extends Component {
                         src={ 'http://www.youtube.com/embed/' + this.props.videoId }>
                         </iframe>
                     </div>
-                    {this.state.videoId}
-                    {this.props.videoId}
+                    
                     <VideoTitleContainer />
 
                     <VideoDescriptionBox />
 
                     <CommentsContainer />
-
+        
                 </section>
 
                 <section className='rightside_videos_wrapper'>        
                     <RecommendedVideosContainer />
-                </section>        
-
+                </section>
             </section>
         );
     }
@@ -50,7 +46,7 @@ class VideoPage extends Component {
 
 function mapStateToProps(state){
     return {
-        VideoId: state.testId
+        videoId: state.videoId
     }
 }
 
