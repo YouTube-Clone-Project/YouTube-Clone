@@ -1,6 +1,14 @@
 import React, { Component } from 'react';
+import router from './router.js';
+
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+
 import './reset.css';
 import './App.css';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer';
+import router from './router';
 
 class App extends Component {
 
@@ -8,9 +16,9 @@ class App extends Component {
     return (
       <div className="App">
 
-        <div className="App-header">
-          <h2>YouTube Clone</h2>
-        </div>
+        <Header />
+          { router }
+        <Footer />
 
       </div>
     );
