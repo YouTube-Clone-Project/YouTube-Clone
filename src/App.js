@@ -12,7 +12,7 @@ class App extends Component {
       <div className="App">
         <Header />
           {/*{ router }*/}
-        {/*<Footer />*/}
+        <Footer />
       </div>
     );
   }
