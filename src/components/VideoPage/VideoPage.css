@@ -1,0 +1,36 @@
+
+.videopage_main_container{
+    width: 100%;
+    overflow: auto;
+    position: relative;
+    background: #eee;
+}
+
+.main_content_wrapper{
+    width: 865px;
+    position: relative;
+    float: left;
+}
+
+.iframe_placeholder{
+    width: 865px;
+    height: 490px;
+    position: relative;
+}
+
+.iframe{
+    width: 855px;
+    height: 480px;
+    /*background: brown;*/
+    position: absolute;
+    left: 35px;
+    top: 10px;
+}
+
+.rightside_videos_wrapper{
+    width: 430px;
+    height: 1800px;
+    float: left;
+    position: relative;
+}
+
