@@ -11,7 +11,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-          {/*{ router }*/}
+          { router }
         <Footer />
       </div>
     );
