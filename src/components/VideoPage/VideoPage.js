@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
 import VideoTitleContainer from './VideoTitleContainer/VideoTitleContainer.js';
 import VideoDescriptionBox from './VideoDescriptionBox/VideoDescriptionBox.js';
@@ -25,17 +26,16 @@ class VideoPage extends Component {
                     <div className='iframe_placeholder'>
                         <iframe 
                         className='iframe'
-                        src={ 'http://www.youtube.com/embed/' + this.state.videoId }>
+                        src={ 'http://www.youtube.com/embed/' + this.props.videoId }>
                         </iframe>
                     </div>
-
+                    {this.state.videoId}
+                    {this.props.videoId}
                     <VideoTitleContainer />
 
                     <VideoDescriptionBox />
 
                     <CommentsContainer />
-
-                   
 
                 </section>
 
@@ -48,7 +48,13 @@ class VideoPage extends Component {
     }
 }
 
-export default VideoPage;
+function mapStateToProps(state){
+    return {
+        VideoId: state.testId
+    }
+}
+
+export default connect(mapStateToProps, {})(VideoPage);
 
 
 // 'https://www.googleapis.com/youtube/v3/videos?id=i9MHigUZKEM&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet'

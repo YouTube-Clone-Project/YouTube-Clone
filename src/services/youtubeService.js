@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 export function getYoutubeVideo() {
-    const promise = axios.get('http://www.youtube.com/api').then( res => console.log(res.data ) );
+    const promise = axios.get('http://www.youtube.com/api').then( res => console.log(res.data.items[0]) );
     return promise;
 }
 
