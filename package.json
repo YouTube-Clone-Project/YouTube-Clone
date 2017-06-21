@@ -17,7 +17,9 @@
     "massive": "^2.4.0",
     "passport": "^0.3.2",
     "passport-auth0": "^0.6.0",
-    "passport-google-oauth": "^1.0.0"
+    "passport-google-oauth": "^1.0.0",
+    "redux-promise-middleware": "^4.3.0"
+
   },
   "devDependencies": {
     "react-scripts": "1.0.7"

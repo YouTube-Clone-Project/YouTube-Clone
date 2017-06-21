@@ -1,0 +1,9 @@
+
+.more_videos_placeholder{
+    width: 415px;
+    height: 1600px;
+    background: #fff;
+    position: absolute;
+    top: 10px;
+    left: 35px;
+}
