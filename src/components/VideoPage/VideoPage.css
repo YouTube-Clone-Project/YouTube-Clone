@@ -21,25 +21,16 @@
 .iframe{
     width: 855px;
     height: 480px;
-    background: darkslategray;
+    /*background: brown;*/
     position: absolute;
     left: 35px;
     top: 10px;
 }
 
-.more_videos_wrapper{
+.rightside_videos_wrapper{
     width: 430px;
     height: 1800px;
     float: left;
     position: relative;
-}
-
-.more_videos_placeholder{
-    width: 415px;
-    height: 1600px;
-    background: #fff;
-    position: absolute;
-    top: 10px;
-    left: 35px;
 }
 

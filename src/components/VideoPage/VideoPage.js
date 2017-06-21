@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom'
+
 import VideoTitleContainer from './VideoTitleContainer/VideoTitleContainer.js';
 import VideoDescriptionBox from './VideoDescriptionBox/VideoDescriptionBox.js';
 import CommentsContainer from './CommentsContainer/CommentsContainer.js';
+import RecommendedVideosContainer from './RecommendedVideosContainer/RecommendedVideosContainer.js';
 
 import './VideoPage.css';
 
@@ -14,9 +14,12 @@ class VideoPage extends Component {
             <section className='videopage_main_container'>
 
                 <section className='main_content_wrapper'>
-                    
+
                     <div className='iframe_placeholder'>
-                        <div className='iframe'></div>
+                        <iframe 
+                        className='iframe'
+                        src='http://www.youtube.com/embed/0tuK0sk_D1M'>
+                        </iframe>
                     </div>
 
                     <VideoTitleContainer />
@@ -25,11 +28,13 @@ class VideoPage extends Component {
 
                     <CommentsContainer />
 
+                   
+
                 </section>
 
-                <div className='more_videos_wrapper'>        
-                    <div className='more_videos_placeholder'></div>
-                </div>        
+                <section className='rightside_videos_wrapper'>        
+                    <RecommendedVideosContainer />
+                </section>        
 
             </section>
         );
