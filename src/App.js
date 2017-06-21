@@ -6,9 +6,6 @@ import Footer from './components/Footer/Footer';
 
 import './reset.css';
 import './App.css';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import router from './router';
 
 class App extends Component {
 
