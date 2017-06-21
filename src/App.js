@@ -3,6 +3,7 @@ import './reset.css';
 import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import router from './router';
 
 class App extends Component {
 
@@ -10,10 +11,8 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <div className="App-header">
-          <h2>YouTube Clone</h2>
-        </div>
-        <Footer />
+          {/*{ router }*/}
+        {/*<Footer />*/}
       </div>
     );
   }
