@@ -1,0 +1,64 @@
+
+.header_placeholder{
+    width: 100%;
+    height: 50px;
+    background: #fff;
+}
+
+.videopage_main_container{
+    width: 100%;
+    position: relative;
+    background: #ddd;
+}
+
+.iframe_placeholder{
+    width: 865px;
+    height: 490px;
+    position: relative;
+}
+
+.iframe{
+    width: 855px;
+    height: 480px;
+    background: darkslategray;
+    position: absolute;
+    left: 35px;
+    top: 10px;
+}
+
+.more_videos_placeholder{
+    width: 410px;
+    height: 1600px;
+    background: #fff;
+    position: absolute;
+    top: 10px;
+    left: 900px;
+}
+
+.video_title_wrapper{
+    width: 100%;
+    height: 170px;
+    position: relative;
+    background: red;
+}
+
+.video_title_container{
+    width: 855px;
+    height: 150px;
+    background: #fff;
+    padding: 10px 10px 10px 10px;
+    position: absolute;
+    left: 35px;
+    top: 10px;
+}
+
+
+
+
+
+
+.footer_placeholder{
+    width: 100%;
+    height: 150px;
+    background: #fff;
+}
