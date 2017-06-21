@@ -20,9 +20,11 @@ export default function header(props){
                         <div className="hamburger_bar"></div>
                         {/*<img src={ hamburger }/>*/}
                     </li>
-                    <li className="header_logo">
-                        <img src={ logo } />
-                    </li>
+                    <Link to="/">
+                        <li className="header_logo">
+                            <img src={ logo } />
+                        </li>
+                    </Link>
                 </ul>
                 <section className="header_search">
                         <input placeholder="Search" />
