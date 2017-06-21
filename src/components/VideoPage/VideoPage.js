@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 // import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom'
+import VideoTitleContainer from './VideoTitleContainer/VideoTitleContainer.js';
 
 import './VideoPage.css';
 
@@ -15,11 +16,12 @@ class VideoPage extends Component {
                         <div className='iframe'></div>
                     </div>
 
-                    <div className='video_title_wrapper'>
+                    <VideoTitleContainer />
+                    {/*<div className='video_title_wrapper'>
                         <div className='video_title_container'>
                             <h2>Video Title</h2>
                         </div>
-                    </div>
+                    </div>*/}
 
                     <div className='video_description_wrapper'>
                         <div className='video_description_container'>
