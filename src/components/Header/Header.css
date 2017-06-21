@@ -8,16 +8,15 @@
     width: 100%;
     height: 56px;
     background: white;
-    display: flex;
-    justify-content: space-around;
     position: relative;
 }
-ul{
-    border: 2px solid lime;
+#menu_logo{
+    /*border: 2px solid lime;*/
     width: 130px;
     display: flex;
     justify-content: space-around;
-    position: relative;
+    position: absolute;
+    left: 20px;
 }
 ul .header_hamburger{
      height: 15px;
@@ -52,35 +51,52 @@ ul .header_hamburger{
     left: -12px;
 }
 .header_search {
-    border: 2px solid black;
+    /*border: 2px solid black;*/
     height: 50px;
-    width: 40%
+    width: 523px;
+    display: flex;
+    justify-content: space-around;
+    position: absolute;
+    left: 180px;
+    padding-top: 10px;
+
 }
 #search_bttn{
-    height:26px;
-    width: 20%;
+    height:29.5px;
+    width: 65px;
     background: #f8f8f8;
     border-radius: 5%;
     border: 1px solid #dddddd;
     position: relative;
 }
-#search_bttn img {
-    height: 20px;
+#search_bttn .search_img {
+    border: none;
+    display: block;
+    opacity: .6;
+    padding: 0;
+    text-indent: -10000px;
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -694px -43px;
+    background-size: auto;
+    width: 15px;
+    height: 15px;
+    box-shadow: none;
     position: absolute;
-    top: 3px;
-    left: calc(50% - 12px);
+    top: 7px;
+    left: calc(50% - 7.5px);
 }
 .header_search input{
     border: 1px solid #dddddd;
     color: #999999;
     height: 26px;
-    width: 80%;
+    width: 458px;
 }
 .upload{
-    border: 2px solid lime;
+    /*border: 2px solid lime;*/
     height: 100%; 
     width: 32px;
-    position: relative;
+    position: absolute;
+    right: 120px;
+
 }
 #upload{
     background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -106px -28px;
@@ -95,15 +111,28 @@ ul .header_hamburger{
 #upload:hover{
     opacity: 0.6;
 }
-#notifications{
+
+#notification_signin{
     position: absolute;
-    top: -2px;
+    right: 10px;
+    display: flex;
+    justify-content: space-around;
+    width: 75px;
+    /*border: 2px solid lime;*/
+}
+#notifications{
     background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -322px -134px;
     background-size: auto;
     width: 30px;
     height: 30px;
+    margin-top: 11px;
+    opacity: 0.5;
+}
+#notifications:hover{
+    opacity: 0.6;
 }
 #sign_in img{
     height: 26px;
     border-radius: 50%;
+    margin-top: 14px;
 }

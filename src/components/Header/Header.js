@@ -13,7 +13,7 @@ export default function header(props){
     return(
         <section className="main_header_section">
             <div className="main_header_div">
-                <ul>
+                <ul id="menu_logo">
                     <li className="header_hamburger">
                         <div className="hamburger_bar"></div>
                         <div className="hamburger_bar"></div>
@@ -27,14 +27,15 @@ export default function header(props){
                 <section className="header_search">
                         <input placeholder="Search" />
                         <div id="search_bttn">
-                            <img src={ search }/>
+                            {/*<img src={ search }/>*/}
+                            <div className="search_img"></div>
                         </div>
                 </section>
                 <section className="upload">
                     <div id="upload">
                     </div>
                 </section>
-                <ul>
+                <ul id="notification_signin">
                     <li id="notifications"></li>
                     <li id="sign_in">
                         <img src={ signIn }/>
