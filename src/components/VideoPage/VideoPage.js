@@ -60,7 +60,7 @@ class VideoPage extends Component {
 
                 <section className='rightside_videos_wrapper'>        
                     <RecommendedVideosContainer
-                    videos={ this.state.recommendedVideos || [] } />
+                    search={ 'skateboarding+dog' } />
                 </section>
             </section>
         );
