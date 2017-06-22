@@ -1,0 +1,26 @@
+.main_video_container{
+    /*height: 100vh;*/
+    width: 100%;
+    background: #eeeeee;
+    border-top: 1px solid #e3e3e3;
+    position: relative;
+    padding-bottom: 40px;
+}
+#main_container{
+    /*height: 90%;*/
+    width: 93%;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    position: relative;
+    background: white;
+    position: relative;
+    margin-top: 2.5%;
+    
+}
+@media(min-width: 1500px){
+        #main_container{
+            width: 65%;
+        }
+    }
+
