@@ -52,7 +52,8 @@
     top: 9px;
     right: 25px;
     font-size: 11px;
-    font-family: 'Muli', sans-serif;
+    /*font-family: 'Muli', sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .language_select #language_img{
     background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) 0 -150px;
@@ -93,7 +94,8 @@
     padding-top: 9px;
     padding-left: 8px;
     font-size: 11px;
-    font-family: 'Muli', sans-serif;
+    /*font-family: 'Muli', sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
 }
 .location_select img{
     height: 20px;
@@ -122,7 +124,8 @@
     padding-top: 9px;
     padding-left: 8px;
     font-size: 11px;
-    font-family: 'Muli', sans-serif;
+    /*font-family: 'Muli', sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
 } 
 .restricted_settings img{
     height: 20px;
@@ -151,7 +154,8 @@
     right: 10px;
     top: 9px;
     font-size: 11px;
-    font-family: 'Muli', sans-serif;
+    /*font-family: 'Muli', sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
 } 
 .history_bttn #hourglass{
     background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -926px -182px;
@@ -184,7 +188,8 @@
     right: 10px;
     top: 9px;
     font-size: 11px;
-    font-family: 'Muli', sans-serif;
+    /*font-family: 'Muli', sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
 } 
 .help_bttn #help_icon{
     background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -605px -143px;
@@ -213,7 +218,8 @@
     flex-wrap: wrap;
     font-size: 12px;
     font-weight: bold;
-    font-family: 'Muli', sans-serif;
+    /*font-family: 'Muli', sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
     color: #333333;
 }
 
@@ -237,7 +243,8 @@
     justify-content: space-around;
     flex-wrap: wrap;
     font-size: 11px;
-    font-family: 'Muli', sans-serif;
+    /*font-family: 'Muli', sans-serif;*/
+    font-family: 'Roboto Condensed', sans-serif;
     color: #666666;
 }
 #third_row li:hover:not(:last-child){

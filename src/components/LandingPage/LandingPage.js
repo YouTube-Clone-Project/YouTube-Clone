@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-// import { connect } from 'react-redux';
-// import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom'
 
 import './LandingPage.css';
 
@@ -8,8 +8,14 @@ class LandingPage extends Component {
 
     render() {
         return (
-            <section className='landingpage_main_container'>
-                Landing Page
+            <section className='landing_main_container'>
+                <div className="landing_words">
+                    <ul className="landing">
+                        <li id="landing">Home</li>
+                        <li id="landing">Trending</li>
+                        <li id="landing">Subscriptions</li>
+                    </ul>
+                </div>
             </section>
         );
     }
