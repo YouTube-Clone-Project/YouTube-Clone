@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import VideosContainer from './VideosContainer/VideosContainer';
 import { Link } from 'react-router-dom'
 
 import './LandingPage.css';
@@ -16,7 +17,9 @@ class LandingPage extends Component {
                         <li id="landing">Subscriptions</li>
                     </ul>
                 </div>
+                <VideosContainer />
             </section>
+            
         );
     }
 }
