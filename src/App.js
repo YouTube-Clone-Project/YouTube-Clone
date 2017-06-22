@@ -1,9 +1,4 @@
 import React, { Component } from 'react';
-import router from './router.js';
-
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-
 import './reset.css';
 import './App.css';
 
