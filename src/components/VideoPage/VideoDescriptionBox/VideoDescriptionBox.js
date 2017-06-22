@@ -14,7 +14,7 @@ class VideoDescriptionBox extends Component {
                     <p id='publish_date'>Published on { snippet.publishedAt }</p>
                     <p id='video_description'>{ snippet.description }</p>
                     <div className='show_more_box'>
-                        <div id='line'></div>
+                        <div className='line'></div>
                         <p id='show_more_words'>SHOW MORE</p>
                     </div>
                 </div>
