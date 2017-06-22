@@ -8,6 +8,6 @@ import VideoPage from './components/VideoPage/VideoPage.js';
 export default (
     <Switch>
         <Route component={ LandingPage } path='/' exact />
-        <Route component={ VideoPage } path='/video' />
+        <Route component={ VideoPage } path='/video/:videoId' />
     </Switch>
 )

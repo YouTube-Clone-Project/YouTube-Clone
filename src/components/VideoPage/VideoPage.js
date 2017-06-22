@@ -29,7 +29,7 @@ class VideoPage extends Component {
                     </div>
                     
                     <VideoTitleContainer />
-
+                    
                     <VideoDescriptionBox />
 
                     <CommentsContainer />
@@ -44,9 +44,9 @@ class VideoPage extends Component {
     }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state, ownProps){
     return {
-        videoId: state.videoId
+        videoId: ownProps.match.params.videoId
     }
 }
 
