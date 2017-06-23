@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
 
 import VideoTitleContainer from './VideoTitleContainer/VideoTitleContainer.js';
 import VideoDescriptionBox from './VideoDescriptionBox/VideoDescriptionBox.js';
@@ -12,7 +13,24 @@ class VideoPage extends Component {
     constructor(props){
         super(props);
         
-        this.state = {}
+        this.state = {
+            videoInfo: {},
+            recommendedVideos: []
+        }
+    }
+
+    componentDidMount(){
+        axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${this.props.videoId}&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet,statistics`)
+        .then( videoInfo => {
+            axios.get(`https://www.googleapis.com/youtube/v3/videos?chart=mostPopular&regionCode=US&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet`)
+            .then( recommendedVideos => {
+                this.setState({
+                    videoInfo: videoInfo.data.items[0],
+                    recommendedVideos: recommendedVideos.data.items
+                })
+                console.log(this.state);
+            });
+        })
     }
 
     render() {
@@ -28,29 +46,34 @@ class VideoPage extends Component {
                         </iframe>
                     </div>
                     
-                    <VideoTitleContainer />
-
-                    <VideoDescriptionBox />
+                    <VideoTitleContainer 
+                    snippet={ this.state.videoInfo.snippet || {} }
+                    videoId={ this.state.videoInfo.id }
+                    statistics={ this.state.videoInfo.statistics || {} } />
+                    
+                    <VideoDescriptionBox 
+                    snippet={ this.state.videoInfo.snippet || {} } />
 
                     <CommentsContainer />
         
                 </section>
 
                 <section className='rightside_videos_wrapper'>        
-                    <RecommendedVideosContainer />
+                    <RecommendedVideosContainer
+                    search={ 'skateboarding+dog' } />
                 </section>
             </section>
         );
     }
 }
 
-function mapStateToProps(state){
+function mapStateToProps(state, ownProps){
     return {
-        videoId: state.videoId
+        videoId: ownProps.match.params.videoId,
     }
 }
 
-export default connect(mapStateToProps, {})(VideoPage);
+export default connect(mapStateToProps, {  } )(VideoPage);
 
 
 // 'https://www.googleapis.com/youtube/v3/videos?id=i9MHigUZKEM&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet'

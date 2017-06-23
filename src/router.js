@@ -11,5 +11,6 @@ export default (
         <Route component={ LandingPage } path='/' exact />
         <Route component={ VideoPage } path='/video' />
         <Route component={ SearchResults } path='/search' />
+
     </Switch>
 )
