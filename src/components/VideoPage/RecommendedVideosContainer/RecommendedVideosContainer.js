@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 import './RecommendedVideosContainer.css';
@@ -8,8 +9,23 @@ class RecommendedVideosContainer extends Component {
         super(props);
 
         this.state = {
-            videoList: [1, 2, 3, 4, 5, 6]
+            videoList: [
+                { 
+                    snippet: {
+                        thumbnails: {
+                            medium: {
+                                url: ''
+                            }
+                        }
+                    },
+                    id: {
+                        videoId: ''
+                    } 
+                }
+            ]
         }
+
+        this.getViews = this.getViews.bind(this)
     }
 
     componentDidMount(){
@@ -22,18 +38,25 @@ class RecommendedVideosContainer extends Component {
         })
     }
 
+    getViews(){
+        let viewCount = Math.floor(Math.random() * 999) + ',' + Math.floor(Math.random() * 899 + 100)
+        return viewCount + ' views';
+    }
+
     render() {
         let videos = this.state.videoList;
         return (
             <div className='more_videos_container'>
                 { 
                 videos.map( (video, index) => {
-                    return  <div key={ index } className='video_box'>
-                                <img src='' />
-                                <h4>{ videos[index].snippet.title || '' }</h4>
-                                <h6>{ videos[index].snippet.channelTitle || '' }</h6>
-                                <p>num of views</p>
-                            </div>
+                    return  <Link to={ '/video/' + videos[index].id.videoId }>
+                                <div key={ index } className='video_box'>
+                                    <img className='video_box_img' src={ videos[index].snippet.thumbnails.medium.url } />
+                                    <h4 className='video_box_title'>{ videos[index].snippet.title }</h4>
+                                    <h6 className='video_box_channel'>{ videos[index].snippet.channelTitle }</h6>
+                                    <p className='video_box_views' > { this.getViews() } </p>
+                                </div>
+                            </Link>
                 }) 
                 }
             </div>
@@ -43,5 +66,3 @@ class RecommendedVideosContainer extends Component {
 
 export default RecommendedVideosContainer;
 
-
-// https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&q=${ this.props.search }&type=video&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI
