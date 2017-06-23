@@ -15,20 +15,15 @@ class VideoPage extends Component {
         
         this.state = {
             videoInfo: {},
-            recommendedVideos: []
         }
     }
 
     componentDidMount(){
         axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${this.props.videoId}&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet,statistics`)
         .then( videoInfo => {
-            axios.get(`https://www.googleapis.com/youtube/v3/videos?chart=mostPopular&regionCode=US&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet`)
-            .then( recommendedVideos => {
-                this.setState({
-                    videoInfo: videoInfo.data.items[0],
-                    recommendedVideos: recommendedVideos.data.items
-                })
-            });
+            this.setState({
+                videoInfo: videoInfo.data.items[0]
+            })
         })
     }
 
