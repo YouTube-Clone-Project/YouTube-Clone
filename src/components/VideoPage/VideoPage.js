@@ -28,7 +28,6 @@ class VideoPage extends Component {
                     videoInfo: videoInfo.data.items[0],
                     recommendedVideos: recommendedVideos.data.items
                 })
-                console.log(this.state);
             });
         })
     }
