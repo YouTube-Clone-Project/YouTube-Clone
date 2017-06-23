@@ -54,6 +54,7 @@ ul .header_hamburger:hover{
     position: absolute;
     top: -28px;
     left: -12px;
+    cursor: pointer;
 }
 .header_search {
     /*border: 2px solid black;*/
