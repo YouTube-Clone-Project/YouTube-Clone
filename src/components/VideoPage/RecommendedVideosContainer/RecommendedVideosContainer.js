@@ -28,23 +28,14 @@ class RecommendedVideosContainer extends Component {
         this.getViews = this.getViews.bind(this)
     }
 
-    // componentWillReceiveProps( nextProps ) {
-    //     axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&q=${ this.props.snippet.tags[1] }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY')
+    // componentDidMount(){
+    //     axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&q=${ this.props.snippet.tags[1] + "+" + this.props.snippet.tages[0] }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY')
     //     .then( res => {
     //         this.setState({
     //             videoList: res.data.items
     //         })
     //     })
     // }
-
-    componentDidMount(){
-        axios.get('https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&q=${ this.props.snippet.tags[1] + "+" + this.props.snippet.tages[0] }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY')
-        .then( res => {
-            this.setState({
-                videoList: res.data.items
-            })
-        })
-    }
 
     getViews(){
         let viewCount = Math.floor(Math.random() * 999) + ',' + Math.floor(Math.random() * 899 + 100)
