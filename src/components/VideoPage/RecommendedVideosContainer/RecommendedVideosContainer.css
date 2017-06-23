@@ -6,17 +6,18 @@ a{
 
 .more_videos_container{
     width: 415px;
-    height: 1210px;
     background: #fff;
     position: absolute;
     top: 10px;
     left: 35px;
+    padding-bottom: 8px;
+    padding-top: 5px;
 }
 
 .video_box{
     width: 96%;
-    height: 120px;
-    padding: 13px 10px 5px 10px;
+    height: 110px;
+    padding: 9px 10px 5px 14px;
     cursor: pointer;
     position: relative;
     overflow: hidden;
@@ -29,7 +30,7 @@ a{
 
 .video_box_title{
     position: absolute;
-    left: 182px;
+    left: 186px;
     top: 13px;
     font-size: 13px;
     font-weight: 600;
@@ -41,7 +42,7 @@ a{
 
 .video_box_channel{
     position: absolute;
-    left: 182px;
+    left: 186px;
     top: 60px;
     font-size: 11px;
     font-weight: 400;
@@ -50,7 +51,7 @@ a{
 
 .video_box_views{
     position: absolute;
-    left: 182px;
+    left: 186px;
     top: 75px;
     font-size: 11px;
     font-weight: 400;

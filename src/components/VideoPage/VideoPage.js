@@ -15,6 +15,7 @@ class VideoPage extends Component {
         
         this.state = {
             videoInfo: {},
+            videoId: props.videoId
         }
 
     }
@@ -45,7 +46,7 @@ class VideoPage extends Component {
         return (
             <section className='videopage_main_container'>
 
-                <section className='main_content_wrapper'>
+                <section className='main_content_wrapper' onClick={ console.log(this.state) }>
 
                     <div className='iframe_placeholder'>
                         <iframe 
@@ -70,6 +71,7 @@ class VideoPage extends Component {
                     <RecommendedVideosContainer
                     snippet={ this.state.videoInfo.snippet } />
                 </section>
+
             </section>
         );
     }
