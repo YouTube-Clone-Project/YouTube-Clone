@@ -16,6 +16,7 @@ class VideoPage extends Component {
         this.state = {
             videoInfo: {},
         }
+
     }
 
     componentDidMount(){
@@ -27,6 +28,19 @@ class VideoPage extends Component {
         })
     }
 
+//componentdidupdate is screwing up the viewcount generator
+
+    // componentDidUpdate(prevProps, prevState){
+    //     if (this.state != prevState){
+    //         axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${this.props.videoId}&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet,statistics`)
+    //         .then( videoInfo => {
+    //             this.setState({
+    //                 videoInfo: videoInfo.data.items[0]
+    //             })
+    //         })
+    //     }
+    // }
+
     render() {
         return (
             <section className='videopage_main_container'>
@@ -36,7 +50,7 @@ class VideoPage extends Component {
                     <div className='iframe_placeholder'>
                         <iframe 
                         className='iframe'
-                        src={ 'http://www.youtube.com/embed/' + this.props.videoId }>
+                        src={ 'http://www.youtube.com/embed/' + this.props.videoId + '?autoplay=1' }>
                         </iframe>
                     </div>
                     
@@ -54,7 +68,7 @@ class VideoPage extends Component {
 
                 <section className='rightside_videos_wrapper'>        
                     <RecommendedVideosContainer
-                    search={ 'skateboarding+dog' } />
+                    snippet={ this.state.videoInfo.snippet } />
                 </section>
             </section>
         );
