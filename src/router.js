@@ -9,7 +9,7 @@ import SearchResults from './components/SearchResults/SearchResults.js';
 export default (
     <Switch>
         <Route component={ LandingPage } path='/' exact />
-        <Route component={ VideoPage } path='/video' />
+        <Route component={ VideoPage } path='/video/:videoId' />
         <Route component={ SearchResults } path='/search' />
     </Switch>
 )
