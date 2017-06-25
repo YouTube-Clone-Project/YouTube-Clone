@@ -15,7 +15,8 @@ class VideoPage extends Component {
         
         this.state = {
             videoInfo: {},
-            videoId: props.videoId
+            videoId: props.videoId,
+            uniqueId: Math.floor(Math.random()*999)
         }
 
     }
@@ -29,24 +30,11 @@ class VideoPage extends Component {
         })
     }
 
-//componentdidupdate is screwing up the viewcount generator
-
-    // componentDidUpdate(prevProps, prevState){
-    //     if (this.state != prevState){
-    //         axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${this.props.videoId}&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet,statistics`)
-    //         .then( videoInfo => {
-    //             this.setState({
-    //                 videoInfo: videoInfo.data.items[0]
-    //             })
-    //         })
-    //     }
-    // }
-
     render() {
         return (
             <section className='videopage_main_container'>
 
-                <section className='main_content_wrapper' onClick={ console.log(this.state) }>
+                <section className='main_content_wrapper'>
 
                     <div className='iframe_placeholder'>
                         <iframe 
@@ -68,8 +56,7 @@ class VideoPage extends Component {
                 </section>
 
                 <section className='rightside_videos_wrapper'>        
-                    <RecommendedVideosContainer
-                    snippet={ this.state.videoInfo.snippet } />
+                    <RecommendedVideosContainer />
                 </section>
 
             </section>
@@ -79,7 +66,7 @@ class VideoPage extends Component {
 
 function mapStateToProps(state, ownProps){
     return {
-        videoId: ownProps.match.params.videoId,
+        videoId: ownProps.match.params.videoId
     }
 }
 
