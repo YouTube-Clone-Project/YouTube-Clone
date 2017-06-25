@@ -10,7 +10,7 @@ export default (
     <Switch>
         <Route component={ LandingPage } path='/' exact />
         <Route component={ VideoPage } path='/video/:videoId' />
-        <Route component={ SearchResults } path='/search' />
+        <Route component={ SearchResults } path='/search/:userInput' />
 
     </Switch>
 )

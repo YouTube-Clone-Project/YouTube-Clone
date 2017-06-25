@@ -1,7 +1,121 @@
 .main_search_container{
-    height: 100vh;
+    /*height: 100vh;*/
     width: 100%;
     background: #eeeeee;
     border-top: 1px solid #e3e3e3;
     position: relative;
+    /*margin-bottom: 15px;*/
+}
+.main_video_search_container{
+    width: 710px;
+    background: white;
+    position: relative;
+    margin-left: 10%;
+    margin-top: 15px;
+    /*margin-bottom: 15px;*/
+    height: auto;
+}
+#search_video_container{
+    width: 710px;
+    background: white;
+    position: relative;
+    /*margin-left: 10%;*/
+    /*margin-top: 15px;*/
+    /*margin-bottom: 15px;*/
+    height: 180px;
+}
+#search_video_img{
+    width: 270px;
+    height: 148px;
+    /*border: 2px solid hotpink;*/
+    position: absolute;
+    top: 12px;
+    left: 15px;
+    cursor: pointer;
+}
+.watch_container{
+    height: 22px;
+    width: 22px;
+    background: #eeeeee;
+    border: 1px solid #b8b8b8;
+    border-radius: 3px;
+    position: absolute;
+    top: 136px;
+    left: 261px;
+    display: none;
+}
+
+#video_display_container:hover .watch_container{
+    display: block;
+}
+#watch_later{
+    height: 14px;
+    width: 14px;
+    opacity: 0.6;
+    position: absolute;
+    top: calc(50% - 7px);
+    left: calc(50% - 7px)
+}
+.search_words_container{
+    /*border: 2px solid lime;*/
+    width: 399px;
+    height: 144px;
+    position: absolute;
+    right: 14px;
+    top: 15px;
+}
+#search_video_title{
+    color: #167ac6;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 22px;
+    cursor: pointer;
+    font-weight: 200;
+}
+#search_video_title:hover{
+    color: #167ac6;
+    text-decoration: underline;
+}
+#search_video_channel{
+    color: #767676;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    cursor: pointer;
+    font-weight: 200;
+    margin-bottom: 3px;
+}
+#search_video_channel:hover{
+    color: #167ac6;
+    text-decoration: underline;
+}
+#search_video_desc{
+    color: #767676;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    margin-top: 5px;
+}
+#search_video_container ul{
+    font-size: 12px;
+    color: #767676;
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative
+}
+#search_video_container li{
+    font-size: 12px;
+    display: inline;
+    color: #767676;
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    padding-right: 4px;
+}
+
+#search_video_container li img{
+    height: 2px;
+    width: 2px;
+    position: absolute;
+    left: -1px;
+    top: 6px;
+    opacity: 0.5; 
 }
