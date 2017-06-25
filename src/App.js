@@ -6,9 +6,6 @@ import router from './router.js';
 
 import './reset.css';
 import './App.css';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import router  from './router'
 
 class App extends Component {
 
