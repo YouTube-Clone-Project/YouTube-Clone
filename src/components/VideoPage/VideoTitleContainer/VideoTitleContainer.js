@@ -3,14 +3,25 @@ import React, { Component } from 'react';
 import './VideoTitleContainer.css';
 
 class VideoTitleContainer extends Component {
+    constructor(props){
+        super(props);
 
+        this.state={}
+
+    }
+
+    componentWillReceiveProps(newProps){
+        if (newProps != this.props){
+            this.props = newProps;
+        }
+    }
 
     render() {
         let {
             snippet,
             statistics,
             id
-        }=this.props
+        }=this.props;
         return (
             <div className='video_title_wrapper'>
                 <div className='video_title_container'>
@@ -22,11 +33,11 @@ class VideoTitleContainer extends Component {
                             <div className='subscribe_play_button'></div>
                             <p>Subscribe</p>
                             <div className='num_subscribers_box'>
-                                <p className='num_subscribers'>433k</p>
+                                <p className='num_subscribers'>{ Math.floor(Math.random() * 80 + 1) }K </p>
                             </div>
                         </div>
                     </div>
-                    <h2 className='video_view_count'>{ statistics.viewCount } views</h2>
+                    <h2 className='video_view_count'> { Number(statistics.viewCount) } views</h2>
                     <div className='video_title_line'></div>
                     <div className='video_title_bottom'>
                         <ul className='add_share_list'>
@@ -45,11 +56,13 @@ class VideoTitleContainer extends Component {
                         </ul>
                         <ul className='like_dislike_list'>
                             <li>
-                                <div className='video_title_like_thumb'></div>
+                                <div className='video_title_like_thumb'
+                                    onClick={ this.props.handleLike } ></div>
                                 <p>{ statistics.likeCount }</p>
                             </li>
                             <li>
-                                <div className='video_title_dislike_thumb'></div>
+                                <div className='video_title_dislike_thumb'
+                                    onClick={ this.props.handleDislike } ></div>
                                 <p>{ statistics.dislikeCount }</p>
                             </li>
                         </ul>

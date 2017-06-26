@@ -51,11 +51,11 @@
     position: relative;
     padding-left: 27px;
     padding-top: 1px;
+    cursor: pointer;
 }
 
 .subscribe_play_button{
     background: no-repeat url('//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp') -721px -88px;
-    /*background: blue;*/
     background-size: auto;
     width: 16px;
     height: 12px;
@@ -105,7 +105,7 @@
     height: 35px;
     position: absolute;
     bottom: 0px;
-    color: #999;
+    color: #000;
 }
 
 .add_share_list{
@@ -122,15 +122,13 @@
     line-height: 20px;
     position: relative;
     padding-left: 30px;
+    cursor: pointer;
+    opacity: 0.5;
 }
 
-/*.video_title_add_box{
-    width: 75px;
-    height: 20px;
-    line-height: 20px;
-    position: relative;
-    padding-left: 30px;
-}*/
+.add_share_list li:hover{
+    opacity: 0.6;
+}
 
 .video_title_plus_button{
     background: no-repeat url('//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp') -813px -232px;
@@ -140,7 +138,6 @@
     position: absolute;
     left: 5px;
     top: 0px;
-    opacity: 0.5;
 }
 
 .video_title_share_arrow{
@@ -151,7 +148,6 @@
     position: absolute;
     left: 5px;
     top: 0px;
-    opacity: 0.5;
 }
 
 .video_title_more_dots{
@@ -162,7 +158,6 @@
     position: absolute;
     left: 5px;
     top: 0px;
-    opacity: 0.5;
 }
 
 .like_dislike_list{
@@ -182,6 +177,12 @@
     line-height: 20px;
     position: relative;
     padding-left: 30px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.like_dislike_list li:hover{
+    opacity: 0.6;
 }
 
 .video_title_like_thumb{
@@ -192,7 +193,6 @@
     position: absolute;
     left: 5px;
     top: 0px;
-    opacity: 0.5;
 }
 
 .video_title_dislike_thumb{
@@ -203,5 +203,4 @@
     position: absolute;
     left: 5px;
     top: 0px;
-    opacity: 0.5;
 }

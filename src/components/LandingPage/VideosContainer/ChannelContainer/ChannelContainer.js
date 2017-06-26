@@ -95,6 +95,7 @@ export default class ChannelContainer extends Component{
             // console.log(this.state)
         })
     }
+    
     displayDate(dateStr){
         let dateObj = new Date(dateStr);
         let postedYear = dateObj.getFullYear();

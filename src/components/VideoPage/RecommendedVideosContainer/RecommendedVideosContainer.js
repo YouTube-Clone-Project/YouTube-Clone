@@ -8,46 +8,9 @@ class RecommendedVideosContainer extends Component {
     constructor(props){
         super(props);
 
-        this.state = {
-            search: [
-                'funny+cats',
-                'epic+music',
-                'moana',
-                'disney+movies',
-                'hans+zimmer'
-            ],
-            videoList: [
-                { 
-                    snippet: {
-                        thumbnails: {
-                            medium: {
-                                url: ''
-                            }
-                        }
-                    },
-                    id: {
-                        videoId: ''
-                    } 
-                }
-            ]
-        }
+        this.state = {}
 
         this.getViews = this.getViews.bind(this);
-        this.getYoutubeVideos = this.getYoutubeVideos.bind(this);
-    }
-
-    componentDidMount(){
-        this.getYoutubeVideos();
-    }
-
-    getYoutubeVideos(){
-        let searchTerm = this.state.search[Math.floor(Math.random()*5)];
-        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&q=${ searchTerm }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`)
-        .then( res => {
-            this.setState({
-                videoList: res.data.items
-            })
-        })
     }
 
     getViews(){
@@ -56,7 +19,7 @@ class RecommendedVideosContainer extends Component {
     }
 
     render() {
-        let videos = this.state.videoList;
+        let videos = this.props.videoList;
         return (
             <div className='more_videos_container'>
                 { 
