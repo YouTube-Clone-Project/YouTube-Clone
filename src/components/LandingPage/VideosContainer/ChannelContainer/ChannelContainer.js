@@ -4,6 +4,7 @@ import { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 
+import watch_later from './../../../Header/img/watch_later.png';
 import bullet from './../../../Header/img/bullet.png';
 import './ChannelContainer.css'
 
@@ -141,18 +142,21 @@ export default class ChannelContainer extends Component{
                 { videos.map( (video, id) => {
                     return <Link to={'/video/' + videos[id].id.videoId}>
                                 <div key={ id } className="videos_info_container">
-                                <img id="video_info_img"src={videos[id].snippet.thumbnails.medium.url}/>
-                                <h1>{videos[id].snippet.title}</h1>
-                                <h2>{videos[id].snippet.channelTitle}</h2>
-                                <ul>
-                                    <li>{
-                                        this.getViews()
-                                    } </li> 
-                                    <li><img src={bullet}/></li>
-                                    <li>{
-                                        this.displayDate(videos[id].snippet.publishedAt)
-                                    } </li>
-                                </ul>
+                                    <img id="video_info_img"src={videos[id].snippet.thumbnails.medium.url}/>
+                                    <h1>{videos[id].snippet.title}</h1>
+                                    <div className="watch_container">
+                                        <img id="watch_later" src={watch_later}/>
+                                    </div>
+                                    <h2>{videos[id].snippet.channelTitle}</h2>
+                                    <ul>
+                                        <li>{
+                                            this.getViews()
+                                        } </li> 
+                                        <li><img src={bullet}/></li>
+                                        <li>{
+                                            this.displayDate(videos[id].snippet.publishedAt)
+                                        } </li>
+                                    </ul>
                             </div>
                           </Link>
                 } )}
