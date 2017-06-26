@@ -93,9 +93,10 @@ export default class ChannelContainer extends Component{
             this.setState({
                 videosArr: videosArr.data.items,
             })
-            console.log(this.state)
+            // console.log(this.state)
         })
     }
+    
     displayDate(dateStr){
         let dateObj = new Date(dateStr);
         let postedYear = dateObj.getFullYear();
