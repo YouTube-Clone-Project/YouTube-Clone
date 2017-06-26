@@ -13,7 +13,7 @@ export default class header extends Component{
 
     // constructor(props){
     //     super(props);
-        
+
     //     this.state = {
     //         videosArr: [],
     //     }
@@ -58,15 +58,17 @@ export default class header extends Component{
                     </section>
                     <ul id="notification_signin">
                         <li id="notifications"></li>
+                        <Link to = "/login">
                         <li id="sign_in">
                             <img src={ signIn }/>
                         </li>
+                        </Link>
                     </ul>
                 </div>
             </section>
         )
     }
-    
-    
-    
+
+
+
 }
