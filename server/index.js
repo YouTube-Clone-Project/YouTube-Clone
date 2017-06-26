@@ -70,7 +70,7 @@ passport.deserializeUser(function(id,done){
 });
 
 ///////Oauth endpoints
-app.get('/getuserinfo',userCtrl.getUserInfo);
+app.get('/getuserinfo',userController.getUserInfo);
 
 app.get('/logout',function(req,res){
   req.session.destroy(function(err,data){
