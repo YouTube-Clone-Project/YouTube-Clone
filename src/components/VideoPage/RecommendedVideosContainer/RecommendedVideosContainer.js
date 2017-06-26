@@ -18,6 +18,20 @@ class RecommendedVideosContainer extends Component {
         return viewCount + ' views';
     }
 
+    formatTitle(str){
+        if (str.length > 84){
+            str = str.split('').slice(0, 84).join('') + '...';
+        }
+        return str;
+    }
+
+    formatChannelTitle(str){
+        if (str.length > 28){
+            str = str.split('').slice(0, 28).join('') + '...';
+        }
+        return str;
+    }
+
     render() {
         let videos = this.props.videoList;
         return (
@@ -27,8 +41,8 @@ class RecommendedVideosContainer extends Component {
                     return  <Link to={ '/video/' + videos[index].id.videoId }>
                                 <div key={ index } className='video_box'>
                                     <img className='video_box_img' src={ videos[index].snippet.thumbnails.medium.url } />
-                                    <h4 className='video_box_title'>{ videos[index].snippet.title }</h4>
-                                    <h6 className='video_box_channel'>{ videos[index].snippet.channelTitle }</h6>
+                                    <h4 className='video_box_title'>{ this.formatTitle(videos[index].snippet.title) }</h4>
+                                    <h6 className='video_box_channel'>{ this.formatChannelTitle(videos[index].snippet.channelTitle) }</h6>
                                     <p className='video_box_views' > { this.getViews() } </p>
                                 </div>
                             </Link>
