@@ -23,7 +23,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 var conn = massive.connectSync({
-  connectionString: "postgres://postgres:ourpasswordhere@localhost/youtubeclonedatabase"
+  connectionString: config.connectionString
 })
 
 app.use(express.static(__dirname + './../build'))///Confused on this
