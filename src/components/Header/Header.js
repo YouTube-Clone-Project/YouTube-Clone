@@ -11,17 +11,19 @@ import signIn from './img/photo.jpg';
 
 export default class header extends Component{
 
+
     constructor(props){
         super(props);
-        
+
         this.state = {
             videosArr: [],
             searchInput: ''
         }
 
+
         this.handleInputChange = this.handleInputChange.bind(this);
     }
-    
+
     handleInputChange( event ){
         this.setState({
             searchInput: event.target.value,
@@ -60,15 +62,17 @@ export default class header extends Component{
                     </section>
                     <ul id="notification_signin">
                         <li id="notifications"></li>
+                        <Link to = "/login">
                         <li id="sign_in">
                             <img src={ signIn }/>
                         </li>
+                        </Link>
                     </ul>
                 </div>
             </section>
         )
     }
-    
-    
-    
+
+
+
 }
