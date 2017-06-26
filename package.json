@@ -11,19 +11,21 @@
     "google-calendar": "^1.3.2",
     "googleapis": "^19.0.0",
     "massive": "^2.4.0",
+    "node": "0.0.0",
     "passport": "^0.3.2",
     "passport-auth0": "^0.6.0",
     "passport-google-oauth": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
     "redux": "^3.7.0",
-    "redux-promise-middleware": "^4.3.0"
-  },
+  }
   "devDependencies": {
-    "react-scripts": "1.0.7"
-  },
+    "react-scripts": "1.0.7",
+    "react-sidenav": "^2.1.1"
+  }
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
