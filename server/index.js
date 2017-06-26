@@ -26,7 +26,7 @@ var conn = massive.connectSync({
   connectionString: "postgres://postgres:ourpasswordhere@localhost/youtubeclonedatabase"
 })
 
-app.use(express.static(__dirname))///Confused on this
+app.use(express.static(__dirname + './../build'))///Confused on this
 app.set('db',conn);
 var db = app.get('db');
 
