@@ -3,12 +3,70 @@ import React, { Component } from 'react';
 import './VideoTitleContainer.css';
 
 class VideoTitleContainer extends Component {
+    constructor(props){
+        super(props);
+
+        this.state={}
+
+    }
+
+    componentWillReceiveProps(newProps){
+        if (newProps != this.props){
+            this.props = newProps;
+        }
+    }
 
     render() {
+        let {
+            snippet,
+            statistics,
+            id
+        }=this.props;
         return (
             <div className='video_title_wrapper'>
                 <div className='video_title_container'>
-                    <h2>Video Title</h2>
+                    <h3 className='video_title'>{ snippet.title }</h3>
+                    <div className='channel_thumbnail'></div>
+                    <div className='channel_container'>
+                        <p className='channel_title'>{ snippet.channelTitle }</p>
+                        <div className='subscribe_button'>
+                            <div className='subscribe_play_button'></div>
+                            <p>Subscribe</p>
+                            <div className='num_subscribers_box'>
+                                <p className='num_subscribers'>{ Math.floor(Math.random() * 80 + 1) }K </p>
+                            </div>
+                        </div>
+                    </div>
+                    <h2 className='video_view_count'> { Number(statistics.viewCount).toLocaleString() } views</h2>
+                    <div className='video_title_line'></div>
+                    <div className='video_title_bottom'>
+                        <ul className='add_share_list'>
+                            <li className='video_title_add_box'>
+                                <div className='video_title_plus_button'></div>
+                                <p>Add to</p>
+                            </li>
+                            <li>
+                                <div className='video_title_share_arrow'></div>
+                                <p>Share</p>
+                            </li>
+                            <li>
+                                <div className='video_title_more_dots'></div>
+                                <p>More</p>
+                            </li>
+                        </ul>
+                        <ul className='like_dislike_list'>
+                            <li>
+                                <div className='video_title_like_thumb'
+                                    onClick={ this.props.handleLike } ></div>
+                                <p>{ Number(statistics.likeCount).toLocaleString() }</p>
+                            </li>
+                            <li>
+                                <div className='video_title_dislike_thumb'
+                                    onClick={ this.props.handleDislike } ></div>
+                                <p>{ Number(statistics.dislikeCount).toLocaleString() }</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         );

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "cors": "^2.8.3",
     "express": "^4.15.3",
@@ -16,18 +17,15 @@
     "passport-google-oauth": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-fontawesome": "^1.6.1",
+
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
-    "react-side-bar": "^0.3.5",
-    "react-z-index": "^2.3.0",
     "redux": "^3.7.0",
-    "redux-promise-middleware": "^4.2.1"
-  },
+  }
   "devDependencies": {
     "react-scripts": "1.0.7",
     "react-sidenav": "^2.1.1"
-  },
+  }
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

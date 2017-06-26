@@ -63,12 +63,22 @@ render(){
                             <img src={ logo } />
                         </li>
                     </Link>
-                </ul>
-                <section className="header_search">
-                        <input placeholder="Search" />
-                        <div id="search_bttn">
-                            {/*<img src={ search }/>*/}
-                            <div className="search_img"></div>
+                        <Link to="/">
+                            <li className="header_logo">
+                                <img src={ logo } />
+                            </li>
+                        </Link>
+                    </ul>
+                    <section className="header_search">
+                            <input onChange={ this.handleInputChange } placeholder="Search" />
+                                <Link to={'/search/' + this.state.searchInput}>
+                                    <div id="search_bttn">
+                                        <div className="search_img"></div>
+                                    </div>
+                                </Link>
+                    </section>
+                    <section className="upload">
+                        <div id="upload">
                         </div>
                 </section>
                 <section className="upload">
@@ -86,6 +96,14 @@ render(){
         </section>
     )
 }
+    <ul id="notification_signin">
+        <li id="notifications"></li>
+        <Link to = "/login">
+            <li id="sign_in">
+                <img src={ signIn }/>
+            </li>
+        </Link>
+    </ul>
 
 
-}
+
