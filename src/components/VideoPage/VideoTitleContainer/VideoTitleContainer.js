@@ -37,7 +37,7 @@ class VideoTitleContainer extends Component {
                             </div>
                         </div>
                     </div>
-                    <h2 className='video_view_count'> { Number(statistics.viewCount) } views</h2>
+                    <h2 className='video_view_count'> { Number(statistics.viewCount).toLocaleString() } views</h2>
                     <div className='video_title_line'></div>
                     <div className='video_title_bottom'>
                         <ul className='add_share_list'>
@@ -58,12 +58,12 @@ class VideoTitleContainer extends Component {
                             <li>
                                 <div className='video_title_like_thumb'
                                     onClick={ this.props.handleLike } ></div>
-                                <p>{ statistics.likeCount }</p>
+                                <p>{ Number(statistics.likeCount).toLocaleString() }</p>
                             </li>
                             <li>
                                 <div className='video_title_dislike_thumb'
                                     onClick={ this.props.handleDislike } ></div>
-                                <p>{ statistics.dislikeCount }</p>
+                                <p>{ Number(statistics.dislikeCount).toLocaleString() }</p>
                             </li>
                         </ul>
                     </div>

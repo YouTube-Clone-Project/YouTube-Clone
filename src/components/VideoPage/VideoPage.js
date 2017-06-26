@@ -105,5 +105,3 @@ function mapStateToProps(state, ownProps){
 
 export default connect(mapStateToProps, {  } )(VideoPage);
 
-
-// 'https://www.googleapis.com/youtube/v3/videos?id=i9MHigUZKEM&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet'
