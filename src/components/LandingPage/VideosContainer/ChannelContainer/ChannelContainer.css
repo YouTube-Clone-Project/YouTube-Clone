@@ -165,3 +165,27 @@ a{
     top: 6px;
     opacity: 0.5; 
 }
+
+.videos_info_container .watch_container{
+    height: 22px;
+    width: 22px;
+    background: #eeeeee;
+    border: 1px solid #b8b8b8;
+    border-radius: 3px;
+    position: absolute;
+    top: 85px;
+    left: 169px;
+    display: none;
+}
+
+.videos_info_container:hover .watch_container{
+    display: block;
+}
+.videos_info_container .watch_container #watch_later{
+    height: 14px;
+    width: 14px;
+    opacity: 0.6;
+    position: absolute;
+    top: calc(50% - 7px);
+    left: calc(50% - 7px)
+}
