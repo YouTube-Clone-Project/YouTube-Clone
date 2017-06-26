@@ -138,7 +138,7 @@ export default class ChannelContainer extends Component{
                 <div id="subscribe_bttn"><div id="bttn_img"></div>Subscribe</div>
                 <div id="subscribers_count">{this.getSubscribers()}</div>
                 <div id="not_interested_bttn"></div>
-                {videos.map( (video, id) => {
+                { videos.map( (video, id) => {
                     return <Link to={'/video/' + videos[id].id.videoId}>
                                 <div key={ id } className="videos_info_container">
                                 <img id="video_info_img"src={videos[id].snippet.thumbnails.medium.url}/>

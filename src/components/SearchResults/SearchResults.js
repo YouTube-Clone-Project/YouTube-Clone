@@ -2,9 +2,11 @@ import React from 'react'
 import {Component} from 'react';
 import bullet from './../Header/img/bullet.png'
 import axios from 'axios';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import watch_later from './../Header/img/watch_later.png';
+import dropdown from '../Header/img/drop_down_arrow.png';
 import './SearchResults.css'
 
 class SearchResults extends Component{
@@ -24,10 +26,12 @@ class SearchResults extends Component{
                     }
                 },
             ],
-
+            filterClicked: false
         }
 
         this.getViews = this.getViews.bind(this)
+        this.getResults = this.getResults.bind(this)
+        this.filterClickedFn = this.filterClickedFn.bind(this)
     }
 
     componentDidMount(){
@@ -71,23 +75,85 @@ class SearchResults extends Component{
        return Math.floor(Math.random() * 899 + 1) + ',' + Math.floor(Math.random() * 899 + 100) + ' views';
     }
 
+    getResults(){
+        return 'About ' + Math.floor(Math.random() * 5 + 1) + ',' + Math.floor(Math.random() * 899 +100) + ',' + Math.floor(Math.random() * 899 + 100) + ' results'
+    }
+    filterClickedFn(){
+        this.setState({
+            filterClicked: !this.state.filterClicked
+        })
+    }
+
 
     render(){
+        let filterBttn = null
+        if(this.state.filterClicked){
+            filterBttn = <section id="menu_dropdown">
+                <ul className="first_column">
+                    <li>Upload date</li>
+                    <li>Today</li>
+                    <li>This week</li>
+                    <li>This month</li>
+                    <li>This year</li>
+                </ul>
+                <ul className="second_column">
+                    <li>Type</li>
+                    <li>Video</li>
+                    <li>Channel</li>
+                    <li>Playlist</li>
+                    <li>Movie</li>
+                    <li>Show</li>
+                </ul>
+                <ul className="third_column">
+                    <li>Duration</li>
+                    <li>Short</li>
+                    <li>Long (> 20 minutes)</li>
+                </ul>
+                <ul className="fourth_column">
+                    <li>Features</li>
+                    <li>4K</li>
+                    <li>HD</li>
+                    <li>Subtitles/CC</li>
+                    <li>Creative Commons</li>
+                    <li>3D</li>
+                    <li>Live</li>
+                    <li>Purchased</li>
+                    <li>360&deg;</li>
+                </ul>
+                <ul className="fifth_column">
+                    <li>Sort by</li>
+                    <li>Relevance</li>
+                    <li>Upload date</li>
+                    <li>Rating</li>
+                </ul>
+            </section>
+        } else {
+            filterBttn = null;
+        }
         let videos = this.state.videoArr;
         console.log(videos)
         return (
             <section className='main_search_container'>
+                <section id="first_box">
+                    {/*<p>Some results have been removed because Restricted Mode is enabled</p>*/}
+                    <div id="filter_bttn" onClick={ this.filterClickedFn }>
+                        <h1>Filters</h1>
+                        <img src={ dropdown } />
+                    </div>
+                    <h2>{ this.getResults() }</h2>
+                </section>
+                { filterBttn }
                 <section className='main_video_search_container'>
                     {videos.map( (video, id) => {
                         return <div  key={ id }id='search_video_container'>
-                        <div id="video_display_container">
+                        <Link to={ '/video/' + videos[id].id.videoId }><div id="video_display_container">
                             <img id="search_video_img" src={ videos[id].snippet.thumbnails.medium.url} />
                             <div className="watch_container">
                                 <img id="watch_later" src={watch_later}/>
                             </div>
-                        </div>
+                        </div></Link>
                         <div className="search_words_container">
-                            <h1 id="search_video_title">{videos[id].snippet.title}</h1>
+                            <Link to={ '/video/' + videos[id].id.videoId }><h1 id="search_video_title">{videos[id].snippet.title}</h1></Link>
                             <h2 id="search_video_channel">{videos[id].snippet.channelTitle}</h2>
                             <ul>
                                 <li>{this.displayDate(videos[id].snippet.publishedAt)}</li>
