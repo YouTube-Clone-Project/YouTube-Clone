@@ -10,8 +10,13 @@ import LoginPage from './components/LoginPage/LoginPage.js'
 export default (
     <Switch>
         <Route component={ LandingPage } path='/' exact />
-        <Route component={ VideoPage } path='/video' />
-        <Route component={ SearchResults } path='/search' />
+
+
         <Route component={ LoginPage } path ='/login'/>
+
+        <Route component={ VideoPage } path='/video/:videoId' />
+        <Route component={ SearchResults } path='/search/:userInput' />
+
+
     </Switch>
 )

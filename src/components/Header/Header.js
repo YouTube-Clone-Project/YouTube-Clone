@@ -11,22 +11,25 @@ import signIn from './img/photo.jpg';
 
 export default class header extends Component{
 
-    // constructor(props){
-    //     super(props);
 
-    //     this.state = {
-    //         videosArr: [],
-    //     }
-    // }
+    constructor(props){
+        super(props);
 
-    // componentDidMount(){
-    //     axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&order=relevance&q=${ userSearch }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`).then( videosArr => {
-    //         this.setState({
-    //             videosArr: videosArr.data
-    //         })
-    //     })
-    // }
+        this.state = {
+            videosArr: [],
+            searchInput: ''
+        }
 
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+    }
+
+    handleInputChange( event ){
+        this.setState({
+            searchInput: event.target.value,
+        })
+        console.log(this.state)
+    }
 
     render(){
         return(
@@ -46,11 +49,12 @@ export default class header extends Component{
                         </Link>
                     </ul>
                     <section className="header_search">
-                            <input placeholder="Search" />
-                            <div id="search_bttn">
-                                {/*<img src={ search }/>*/}
-                                <div className="search_img"></div>
-                            </div>
+                            <input onChange={ this.handleInputChange } placeholder="Search" />
+                                <Link to={'/search/' + this.state.searchInput}>
+                                    <div id="search_bttn">
+                                        <div className="search_img"></div>
+                                    </div>
+                                </Link>
                     </section>
                     <section className="upload">
                         <div id="upload">
