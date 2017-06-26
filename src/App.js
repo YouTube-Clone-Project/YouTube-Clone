@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import router from './router.js';
+import router from './router';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
+import Sidebar from 'react-side-bar';
+
+import SideNav, { Nav, NavIcon, NavText } from 'react-sidenav';
 
 import './reset.css';
 import './App.css';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import router from './router';
+// import './../HamburgerDropdown.css';
 
 class App extends Component {
 
@@ -24,5 +25,6 @@ class App extends Component {
     );
   }
 }
+
 
 export default App;

@@ -8,7 +8,7 @@ import copyright from '../Header/img/copyright.ico';
 
 export default function footer(props){
     return(
-        <section className="main_footer_section">
+        <section className="main_footer_section" style={{position: 'absolute', zIndex: '1500'}} >
             <section id="first_row">
                 <div className="logo">
                     <img src={ logo }/>
