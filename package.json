@@ -20,12 +20,12 @@
 
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
-    "redux": "^3.7.0",
-  }
+    "redux": "^3.7.0"
+  },
   "devDependencies": {
     "react-scripts": "1.0.7",
     "react-sidenav": "^2.1.1"
-  }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
