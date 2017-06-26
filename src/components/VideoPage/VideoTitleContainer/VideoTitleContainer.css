@@ -27,17 +27,19 @@
 }
 
 .channel_container{
-    width: 80px;
+    width: 400px;
     height: 50px;
     position: absolute;
     left: 68px;
-    top: 47px;
+    top: 44px;
 }
 
 .channel_title{
+    height: 14px;
     font-size: 12px;
     font-weight: bold;
     margin-bottom: 5px;
+    overflow: hidden;
 }
 
 .subscribe_button{
