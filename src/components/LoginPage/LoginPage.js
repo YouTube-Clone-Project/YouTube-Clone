@@ -15,9 +15,11 @@ var LoginPage = React.createClass({
       </div>
       <br/>
       <br/>
+      <a href='/auth/google'>
       <div className = "googlebutton">
         <p className= "siwg">Sign In With Google</p>
       </div>
+      </a>
       </div>
     </div>
     )

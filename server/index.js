@@ -70,7 +70,7 @@ passport.deserializeUser(function(id,done){
 });
 
 ///////Oauth endpoints
-app.get('/getuserinfo',userCtrl.getUserInfo);
+app.get('/getuserinfo',userController.getUserInfo);
 
 app.get('/logout',function(req,res){
   req.session.destroy(function(err,data){
@@ -82,5 +82,8 @@ app.get('/auth/google', passport.authenticate('google', { scope: ['https://www.g
 app.get('/auth/callback', passport.authenticate('google', { failureRedirect: '/#/' }), function (req, res) {
     res.redirect('/#/');
 });
+//////POST endpoints
+
+//app.post('/api/postcomment', userController.addComment);
 
 app.listen(3000,console.log("you are now connected, database should work too"));
