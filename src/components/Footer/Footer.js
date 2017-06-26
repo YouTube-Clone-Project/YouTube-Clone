@@ -10,9 +10,9 @@ export default function footer(props){
     return(
         <section className="main_footer_section">
             <section id="first_row">
-                <div className="logo">
+               <Link to='/'> <div className="logo">
                     <img src={ logo }/>
-                </div>
+                </div> </Link>
                 <div className="language_select">
                     <div id="language_img"></div>
                     <p>Language: English </p>
