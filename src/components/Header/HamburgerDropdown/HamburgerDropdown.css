@@ -1,46 +1,43 @@
+#sideNav {
+    position: fixed;
+    padding-left: 8px;
+    padding-right: 8px;
+}
 #home {
     background: '#d0171f';
     color: #fff;
-    width: 90%;
-    padding-left: 5%;
 }
 iconH {
     font-size: 25px;
     font-weight: bold;
     font-family:  'Webdings';
 }
-
 itemH {
     font-weight: bold;
     margin-top: 6px;
     height: 23px;
 }
-
 item1 {
     margin-top: 2px;
     height: 23px;
 }
-
 item2 {
     margin-top: 2px;
     height: 23px;
     text-align: left;
 }
-
 icon1 {
     font-size: 25px;
     font-family:  'Webdings';
     text-align: left;
     margin-left:  -15px;
 }
-
 icon2 {
     font-size: 25px;
     font-family:  'Wingdings';
     margin-left: -5px;
     text-align: left;
 }
-
 icon3 {
     font-size: 20px;
     font-family:  'Webdings';
@@ -64,7 +61,6 @@ icon3:hover{
     margin-top: 4px;
     text-align: left;
 }
-
 icon4 {
     font-weight: bold;
     height: 23px;
@@ -77,7 +73,6 @@ icon4 {
     margin-left: -16px;
     text-align: left;
 }
-
 h4 {
     font-size: 15px;
     padding-left:  35px;

@@ -6,7 +6,7 @@ import './HamburgerDropdown.css';
   
 function MySideNav (props) {
 	return(
-    <div id='sideNav' style={props.style}> 
+		<div id='sideNav' style={props.style}> 
             <br></br>
             
           <div style={{ background: '#d0171f', color: '#fff'}}>
