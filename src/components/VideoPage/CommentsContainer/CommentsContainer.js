@@ -40,7 +40,6 @@ class CommentsContainer extends Component {
                     comments: res.data
                 })
             })
-            console.log('update');
         }
     }
 
