@@ -45,9 +45,11 @@ class CommentsContainer extends Component {
             clicked: !this.state.clicked
         });
             if(!this.state.clicked){
-            document.getElementById('comment_filter').classList.add('active') 
+            document.getElementById('comment_filter').style.background = '#e9e9e9'; 
+            } else if (this.state.clicked) {
+                document.getElementById('comment_filter').style.background = '#f8f8f8';
             } else {
-                document.getElementById('comment_filter').classList.remove('active')
+                document.getElementById('comment_filter').style.background = '#f8f8f8';
             }
     }
 
