@@ -23,10 +23,11 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 var conn = massive.connectSync({
-  connectionString: "postgres://postgres:ourpasswordhere@localhost/youtubeclonedatabase"
+  connectionString: config.connectionString
 })
 
-app.use(express.static(__dirname + './../build'))///Confused on this
+
+app.use(express.static(__dirname + './../build'))
 app.set('db',conn);
 var db = app.get('db');
 
@@ -70,7 +71,7 @@ passport.deserializeUser(function(id,done){
 });
 
 ///////Oauth endpoints
-app.get('/getuserinfo',userCtrl.getUserInfo);
+app.get('/getuserinfo',userController.getUserInfo);
 
 app.get('/logout',function(req,res){
   req.session.destroy(function(err,data){
