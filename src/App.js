@@ -3,7 +3,6 @@ import router from './router';
 
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
-import Sidebar from 'react-side-bar';
 
 import SideNav, { Nav, NavIcon, NavText } from 'react-sidenav';
 

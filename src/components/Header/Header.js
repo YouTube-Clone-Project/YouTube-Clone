@@ -86,24 +86,17 @@ render(){
                     </div>
                 </section>
                 <ul id="notification_signin">
-                    <li id="notifications"></li>
-                    <li id="sign_in">
-                        <img src={ signIn }/>
-                    </li>
+                    <Link to="/login">
+                        <li id="notifications"></li>
+                        <li id="sign_in">
+                            <img src={ signIn }/>
+                        </li>
+                    </Link>
                 </ul>
             </div>
             < MySideNav style={this.state.css} />
         </section>
     )
 }
-    <ul id="notification_signin">
-        <li id="notifications"></li>
-        <Link to = "/login">
-            <li id="sign_in">
-                <img src={ signIn }/>
-            </li>
-        </Link>
-    </ul>
 
-
-
+}
