@@ -2,6 +2,7 @@
   "name": "youtube-clone",
   "version": "0.1.0",
   "private": true,
+  "main": "./server/index.js",
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
@@ -17,15 +18,15 @@
     "passport-google-oauth": "^1.0.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-
     "react-redux": "^5.0.5",
     "react-router-dom": "^4.1.1",
-    "redux": "^3.7.0",
-  }
+    "react-z-index": "^2.3.0",
+    "redux": "^3.7.0"
+  },
   "devDependencies": {
     "react-scripts": "1.0.7",
     "react-sidenav": "^2.1.1"
-  }
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

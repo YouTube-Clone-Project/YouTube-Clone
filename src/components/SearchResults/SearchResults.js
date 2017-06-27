@@ -26,7 +26,20 @@ class SearchResults extends Component{
                     }
                 },
             ],
-            filterClicked: false
+            filterClicked: false,
+            views: [
+                Math.floor(Math.random() * 1500000 + 1).toLocaleString() + ' views',
+                Math.floor(Math.random() * 1500000 + 1).toLocaleString() + ' views',
+                Math.floor(Math.random() * 1500000 + 1).toLocaleString() + ' views',
+                Math.floor(Math.random() * 1500000 + 1).toLocaleString() + ' views',
+                Math.floor(Math.random() * 1500000 + 1).toLocaleString() + ' views',
+                Math.floor(Math.random() * 1500000 + 1).toLocaleString() + ' views',
+                Math.floor(Math.random() * 1500000 + 1).toLocaleString() + ' views',
+                Math.floor(Math.random() * 1500000 + 1).toLocaleString() + ' views',
+                Math.floor(Math.random() * 1500000 + 1).toLocaleString() + ' views',
+                Math.floor(Math.random() * 1500000 + 1).toLocaleString() + ' views',
+            ],
+            numberOfResults: Math.floor(Math.random() * 5000000 + 1).toLocaleString()
         }
 
         this.getViews = this.getViews.bind(this)
@@ -39,9 +52,15 @@ class SearchResults extends Component{
             this.setState({
                 videoArr: videoArr.data.items
             })
-            console.log(this.state)
         })
-        
+    }
+
+    componentDidUpdate(){
+        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=viewCount&pageToken=CAoQAA&q=${this.props.userInput }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`).then( videoArr => {
+            this.setState({
+                videoArr: videoArr.data.items
+            })
+        })
     }
 
     displayDate(dateStr){
@@ -71,12 +90,12 @@ class SearchResults extends Component{
         
     }
 
-    getViews(){
-       return Math.floor(Math.random() * 899 + 1) + ',' + Math.floor(Math.random() * 899 + 100) + ' views';
+    getViews(index){
+       return this.state.views[index];
     }
 
     getResults(){
-        return 'About ' + Math.floor(Math.random() * 5 + 1) + ',' + Math.floor(Math.random() * 899 +100) + ',' + Math.floor(Math.random() * 899 + 100) + ' results'
+        return 'About ' + this.state.numberOfResults + ' results'
     }
     filterClickedFn(){
         this.setState({
@@ -158,7 +177,7 @@ class SearchResults extends Component{
                             <ul>
                                 <li>{this.displayDate(videos[id].snippet.publishedAt)}</li>
                                 <li><img id="bullet_img" src={bullet}/></li>
-                                <li>{this.getViews()}</li>
+                                <li>{ this.getViews(id) }</li>
                             </ul>
                             <p id="search_video_desc">{videos[id].snippet.description}</p>
                         </div>
