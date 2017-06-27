@@ -14,11 +14,21 @@ export default class Header extends Component {
         this.state = {
             switcher : false,
             css :	{
-                visibility: "hidden" }
+                visibility: "hidden" 
+            },
+            searchInput: ''
         }
+
         this.cssSwitch = this.cssSwitch.bind(this);
         this.toggle = this.toggle.bind(this);   
+        this.handleInputChange = this.handleInputChange.bind(this); 
     };
+
+    handleInputChange( event ){
+        this.setState({
+            searchInput: event.target.value,
+        })
+    }
 
  cssSwitch(value){
 	if(value){
