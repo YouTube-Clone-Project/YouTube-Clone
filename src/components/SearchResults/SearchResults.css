@@ -147,6 +147,7 @@
     top: 136px;
     left: 261px;
     display: none;
+    cursor: pointer;
 }
 
 #video_display_container:hover .watch_container{

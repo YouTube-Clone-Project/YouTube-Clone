@@ -13,5 +13,12 @@ module.exports = {
         res.status(200).json(user);
       }
     });
+  },
+
+  getCommentsByVideo: function (req, res, next){
+    let videoId = req.params.videoId;
+    db.getCommentsByVideo([videoId], function(err, comments){
+      return res.status(200).json(comments);
+    })
   }
 };

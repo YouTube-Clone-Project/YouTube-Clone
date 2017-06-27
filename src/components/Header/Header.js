@@ -85,10 +85,6 @@ render(){
                     <div id="upload">
                     </div>
                 </section>
-                <section className="upload">
-                    <div id="upload">
-                    </div>
-                </section>
                 <ul id="notification_signin">
                     <li id="notifications"></li>
                     <Link to = "/login">
@@ -102,4 +98,6 @@ render(){
         </section>
     )
 }
-}   
+
+}
+
