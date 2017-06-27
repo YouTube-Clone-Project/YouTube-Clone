@@ -81,3 +81,123 @@
     z-index: 100;
     background: transparent;
 }
+#border_line{
+    height: 0.5px;
+    background: #d5d5d5;
+    width: 95%;
+    position: absolute;
+    top: 117px;
+    left: 2.5%;
+}
+
+.all_comments{
+    width: 855px;
+    background: white;
+    position: absolute;
+    top: 119px;
+    left: 35px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 12.5px;
+}
+.individual_comment{
+    width: 855px;
+    border: 1px solid white;
+    position: relative;
+}
+.user_comment_thumbnail{
+    height: 57px;
+    width: 63px;
+    background-color: lime;
+    margin: 14px 15px 15px 20px;
+}
+.individual_comment #user_info_comment{
+    /*border: 1px solid black;*/
+    width: 400px;
+    height: auto;
+    display: flex;
+    position: absolute;
+    top: 18px;
+    left: 99px;
+}
+
+#user_info_comment li{
+    padding-right: 12px;
+}
+#user_info_comment li:nth-child(1){
+    color: #128ee9;
+    font-size: 14px;
+    font-weight: bold;
+}
+#user_info_comment li:nth-child(1):hover{
+    text-decoration: underline;
+    cursor:pointer;
+}
+#user_info_comment li:nth-child(2){
+    color: #767676;
+    font-size: 11px;
+    vertical-align: middle;
+    line-height: 15px;
+}
+#comment_comment{
+    width: 740px;
+    /*border: 1px solid gray;*/
+    position: absolute;
+    left: 99px;
+    top: 41px;
+}
+
+.comment_reply_box{
+    /*border: 2px solid blueviolet;*/
+    width: 500px;
+    position: absolute;
+    top: 64px;
+    left: 98px;
+}
+
+.comment_reply_box #reply_functions{
+    display: flex;
+}
+#reply_functions li{
+    padding-right: 12px;
+}
+
+#reply_functions li:nth-child(1){
+    color: #555555;
+    font-size: 12px;
+}
+#reply_functions li:nth-child(2) img{
+    height: 3px;
+    width: 3px;
+    position: absolute;
+    top: 5px;
+    left: 37px;
+    opacity: 0.5;
+}
+#reply_functions li:nth-child(3){
+    color: #128ee9;
+    font-size: 12px;
+    margin-left: -10px;
+}
+
+#reply_functions #thumb_up{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-comments-2x-vflonHBZX.webp) 0 -36px;
+    background-size: 182px 302px;
+    width: 14px;
+    height: 14px;
+    opacity: 0.5
+}
+#reply_functions #thumb_up:hover{
+    opacity: 0.7;
+    cursor:pointer;
+}
+#reply_functions #thumb_down{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-comments-2x-vflonHBZX.webp) -90px -214px;
+    background-size: 182px 302px;
+    width: 14px;
+    height: 14px;
+    opacity: 0.5
+}
+#reply_functions #thumb_down:hover{
+    opacity: 0.7;
+    cursor:pointer;
+}
