@@ -46,7 +46,7 @@ class VideoPage extends Component {
     }
 
     componentDidUpdate(prevProps, prevState){
-        if (this.props != prevProps){
+        if ( this.props !== prevProps ){
             axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${this.props.videoId}&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet,statistics`)
             .then( videoInfo => {
                 videoInfo = videoInfo.data.items[0];

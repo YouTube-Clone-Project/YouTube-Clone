@@ -35,7 +35,7 @@ class CommentsContainer extends Component {
     }
 
     componentDidUpdate(prevProps, prevState){
-        if ( this.props !== prevProps){
+        if ( this.props !== prevProps ){
             axios.get( '/api/comments/' + this.props.videoId )
             .then( res => {
                 this.setState({
@@ -53,16 +53,13 @@ class CommentsContainer extends Component {
 
     postUserComment(){
         let newComment = this.state.userInput;
-        axios.post( '/api/comments/'+this.props.videoId, {
-            "text": this.state.userInput
-        } )
-        .then( postres => {
-            axios.get( '/api/comments/' + this.props.videoId )
-            .then( res => {
-                this.setState({
-                    comments: res.data
-                })
-            })
+        // axios.post( '/api/comments/' + this.props.videoId, {
+        //     "text": this.state.userInput
+        // })
+        // .then( res => {})
+        this.setState({
+            comments: [newComment, ...this.state.comments],
+            userInput: ''
         })
     }
 
