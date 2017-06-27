@@ -84,4 +84,7 @@ app.get('/auth/callback', passport.authenticate('google', { failureRedirect: '/#
     res.redirect('/#/');
 });
 
-app.listen(3000,console.log("you are now connected, database should work too"));
+//////////Other endpoints for the front end
+app.get('/api/comments/:videoId', userController.getCommentsByVideo);
+
+app.listen(3000,console.log("you are now connected on 3000, database should work too"));

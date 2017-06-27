@@ -26,7 +26,7 @@ class CommentsContainer extends Component {
     }
 
    componentDidMount(){
-        axios.get('/api/comments')
+        axios.get( '/api/comments/' + this.props.videoId )
         .then( res => {
             this.setState({
                 comments: res.data
@@ -34,6 +34,17 @@ class CommentsContainer extends Component {
         })
     }
 
+
+    componentDidUpdate(prevProps, prevState){
+        if ( this.props !== prevProps){
+            axios.get( '/api/comments/' + this.props.videoId )
+            .then( res => {
+                this.setState({
+                    comments: res.data
+                })
+            })
+        }
+    }
 
    formatDate(str){
         let timeAgo = new Date(str);
@@ -93,10 +104,10 @@ class CommentsContainer extends Component {
                             return  <div key={index} className='individual_comment'>
                                             <div className='user_comment_thumbnail'></div>
                                             <ul id="user_info_comment">
-                                                <li id="comment_user_name">loren</li>
-                                                <li id="comment_posted">3 months ago</li>
+                                                <li id="comment_user_name">{ comment.userid }</li>
+                                                <li id="comment_posted">{ comment.comment_date }</li>
                                             </ul>
-                                            <p id="comment_comment">this video is the best video in the world!</p>
+                                            <p id="comment_comment">{ comment.content }</p>
                                             
                                             <div className='comment_reply_box'>
                                                 <ul id="reply_functions">
