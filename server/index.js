@@ -79,8 +79,8 @@ app.get('/logout',function(req,res){
 
 app.get('/auth/google', passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/calendar'] }));
 
-app.get('/auth/callback', passport.authenticate('google', { failureRedirect: '/#/' }), function (req, res) {
-    res.redirect('/#/');
+app.get('/auth/callback', passport.authenticate('google', { failureRedirect: '/LoginPage' }), function (req, res) {
+    res.redirect('/');
 });
 
 app.listen(3000,console.log("you are now connected, database should work too"));
