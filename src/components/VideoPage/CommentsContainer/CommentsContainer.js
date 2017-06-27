@@ -3,6 +3,7 @@ import axios from 'axios';
 import './CommentsContainer.css';
 import bullet from './../../Header/img/bullet.png';
 import userImg from './../../Header/img/photo.jpg';
+import down_arrow from './../../Header/img/drop_down_arrow.png';
 
 class CommentsContainer extends Component {
 
@@ -60,6 +61,10 @@ class CommentsContainer extends Component {
                     </div>
                 </div>
                 <section className='all_comments'>
+                    <div id="comment_filter">
+                        <p>Top Comments</p>
+                        <div><img src={ down_arrow }/></div>
+                    </div>
                 {
                         this.state.comments.map( (comment, index) => {
                             return  <div key={index} className='individual_comment'>
