@@ -16,11 +16,13 @@ class CommentsContainer extends Component {
                     date: '',
                     text: ''
                 },
-                
-            ]
+            ],
+            userInput: ''
         }
 
        this.formatDate = this.formatDate.bind(this);
+       this.handleUserInputChange = this.handleUserInputChange.bind(this);
+       this.postUserComment = this.postUserComment.bind(this);
     }
 
    componentDidMount(){
@@ -41,6 +43,27 @@ class CommentsContainer extends Component {
                 })
             })
         }
+    }
+
+    handleUserInputChange(e){
+        this.setState({
+            userInput: e.target.value
+        })
+    }
+
+    postUserComment(){
+        let newComment = this.state.userInput;
+        axios.post( '/api/comments/'+this.props.videoId, {
+            "text": this.state.userInput
+        } )
+        .then( postres => {
+            axios.get( '/api/comments/' + this.props.videoId )
+            .then( res => {
+                this.setState({
+                    comments: res.data
+                })
+            })
+        })
     }
 
    formatDate(str){
@@ -65,7 +88,13 @@ class CommentsContainer extends Component {
                         </div>
                     </div>
                     <div id="comment_input">
-                        <input placeholder="Add a public comment..."/>
+                        <form onSubmit={ this.postUserComment }>
+                            <input 
+                            placeholder="Add a public comment..."
+                            onChange={ this.handleUserInputChange }
+                            value={ this.state.userInput }
+                            />
+                        </form>
                     </div>
                     <div id="border_line">
                     </div>

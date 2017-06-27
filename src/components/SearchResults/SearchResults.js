@@ -55,12 +55,14 @@ class SearchResults extends Component{
         })
     }
 
-    componentDidUpdate(){
-        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=viewCount&pageToken=CAoQAA&q=${this.props.userInput }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`).then( videoArr => {
-            this.setState({
-                videoArr: videoArr.data.items
+    componentDidUpdate(prevProps){
+        if(this.props != prevProps){
+            axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=viewCount&pageToken=CAoQAA&q=${this.props.userInput }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`).then( videoArr => {
+                this.setState({
+                    videoArr: videoArr.data.items
+                })
             })
-        })
+        }
     }
 
     displayDate(dateStr){

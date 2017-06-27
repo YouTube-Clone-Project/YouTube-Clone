@@ -19,5 +19,15 @@ module.exports = {
     db.getCommentsByVideo([videoId], function(err, comments){
       return res.status(200).json(comments);
     })
+  },
+
+  postCommentToVideo: function (req, res, next){
+    let videoId = req.params.videoId;
+    let commentText = req.body.text;
+    let date = new Date();
+    let userId = 4;
+    db.postCommentToVideo([commentText, videoId, date, userId], function(err, response){
+      return res.status(200).json('ok');
+    })
   }
 };
