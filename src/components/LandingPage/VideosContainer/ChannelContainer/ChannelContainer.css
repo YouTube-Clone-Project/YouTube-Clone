@@ -176,6 +176,7 @@ a{
     top: 85px;
     left: 169px;
     display: none;
+    cursor: pointer;
 }
 
 .videos_info_container:hover .watch_container{

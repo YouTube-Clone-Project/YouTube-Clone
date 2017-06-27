@@ -26,6 +26,7 @@ var conn = massive.connectSync({
   connectionString: config.connectionString
 })
 
+
 app.use(express.static(__dirname + './../build'))
 app.set('db',conn);
 var db = app.get('db');
