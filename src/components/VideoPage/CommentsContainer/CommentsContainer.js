@@ -18,9 +18,10 @@ class CommentsContainer extends Component {
                     text: ''
                 },
                 
-            ]
+            ],
+            clicked: false
         }
-
+        this.handleCommentFilterChange = this.handleCommentFilterChange.bind(this);
        this.formatDate = this.formatDate.bind(this);
     }
 
@@ -33,12 +34,31 @@ class CommentsContainer extends Component {
         })
     }
 
+
    formatDate(str){
         let timeAgo = new Date(str);
         return timeAgo
     }
 
+    handleCommentFilterChange(){
+        this.setState({
+            clicked: !this.state.clicked
+        });
+            if(!this.state.clicked){
+            document.getElementById('comment_filter').classList.add('active') 
+            } else {
+                document.getElementById('comment_filter').classList.remove('active')
+            }
+    }
+
     render() {
+        let filterBttn = null;
+        if(this.state.clicked){
+            filterBttn = <div id="filter_content">
+                <p>Top Comments</p>
+                <p>Newest First</p>
+            </div>
+        }
         return (
             <div className='comments_wrapper'>
                 <div className='comments_container'>
@@ -61,10 +81,11 @@ class CommentsContainer extends Component {
                     </div>
                 </div>
                 <section className='all_comments'>
-                    <div id="comment_filter">
+                    <div id="comment_filter" onClick={ this.handleCommentFilterChange }>
                         <p>Top Comments</p>
                         <div><img src={ down_arrow }/></div>
                     </div>
+                    { filterBttn }
                 {
                         this.state.comments.map( (comment, index) => {
                             return  <div key={index} className='individual_comment'>
