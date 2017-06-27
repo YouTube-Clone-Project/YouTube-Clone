@@ -25,18 +25,9 @@
   },
   "devDependencies": {
     "react-scripts": "1.0.7",
-    "react-sidenav": "^2.1.1",
-    "stylus": "latest",
-    "pug": "latest",
-    "browserify": "latest",
-    "watch": "latest"
+    "react-sidenav": "^2.1.1"
   },
   "scripts": {
-    // "build:js": "browserify src/**/*.js > build/static.js",
-    // "build:css": "stylus src/**/*.css > build/static.css",
-    // "build:html": "pug public/index.html > build/index.html",
-    // "autobuild": "npm run build:js && npm run build:css && npm run build:html",
-    // "app": "watch 'npm run autobuild' .",
     "start": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
