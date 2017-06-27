@@ -2,7 +2,6 @@
 
 import React from 'react';
 import SideNav, { Nav, NavIcon, NavText } from 'react-sidenav';
-import { zIndex } from 'react-z-index';
 import './HamburgerDropdown.css';
   
 function MySideNav (props) {
