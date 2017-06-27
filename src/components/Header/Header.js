@@ -56,30 +56,24 @@ render(){
                         <div className="hamburger_bar"></div>
                         <div className="hamburger_bar"></div>
                         <div className="hamburger_bar"></div>
-                        {/*<img src={ hamburger }/>*/}
                     </li>
                     <Link to="/">
                         <li className="header_logo">
                             <img src={ logo } />
                         </li>
                     </Link>
-                        <Link to="/">
-                            <li className="header_logo">
-                                <img src={ logo } />
-                            </li>
-                        </Link>
-                    </ul>
-                    <section className="header_search">
-                            <input onChange={ this.handleInputChange } placeholder="Search" />
-                                <Link to={'/search/' + this.state.searchInput}>
-                                    <div id="search_bttn">
-                                        <div className="search_img"></div>
-                                    </div>
-                                </Link>
-                    </section>
-                    <section className="upload">
-                        <div id="upload">
+                </ul>
+                <section className="header_search">
+                    <input onChange={ this.handleInputChange } placeholder="Search" />
+                    <Link to={'/search/' + this.state.searchInput}>
+                        <div id="search_bttn">
+                            <div className="search_img"></div>
                         </div>
+                    </Link>
+                </section>
+                <section className="upload">
+                    <div id="upload">
+                    </div>
                 </section>
                 <section className="upload">
                     <div id="upload">
@@ -87,23 +81,15 @@ render(){
                 </section>
                 <ul id="notification_signin">
                     <li id="notifications"></li>
-                    <li id="sign_in">
-                        <img src={ signIn }/>
-                    </li>
+                    <Link to = "/login">
+                        <li id="sign_in">
+                            <img src={ signIn }/>
+                        </li>
+                    </Link>
                 </ul>
             </div>
             < MySideNav style={this.state.css} />
         </section>
     )
 }
-    <ul id="notification_signin">
-        <li id="notifications"></li>
-        <Link to = "/login">
-            <li id="sign_in">
-                <img src={ signIn }/>
-            </li>
-        </Link>
-    </ul>
-
-
-
+}   

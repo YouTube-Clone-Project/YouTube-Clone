@@ -6,7 +6,9 @@ class VideoTitleContainer extends Component {
     constructor(props){
         super(props);
 
-        this.state={}
+        this.state={
+            subscribers: Math.floor(Math.random() * 80 + 1)
+        }
 
     }
 
@@ -28,12 +30,12 @@ class VideoTitleContainer extends Component {
                     <h3 className='video_title'>{ snippet.title }</h3>
                     <div className='channel_thumbnail'></div>
                     <div className='channel_container'>
-                        <p className='channel_title'>{ snippet.channelTitle }</p>
-                        <div className='subscribe_button'>
+                        <p key={1} className='channel_title'>{ snippet.channelTitle }</p>
+                        <div key={2} className='subscribe_button'>
                             <div className='subscribe_play_button'></div>
                             <p>Subscribe</p>
                             <div className='num_subscribers_box'>
-                                <p className='num_subscribers'>{ Math.floor(Math.random() * 80 + 1) }K </p>
+                                <p className='num_subscribers'>{ this.state.subscribers }K </p>
                             </div>
                         </div>
                     </div>

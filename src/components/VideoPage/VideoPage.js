@@ -39,6 +39,23 @@ class VideoPage extends Component {
         })
     }
 
+    componentDidUpdate(prevProps, prevState){
+        if (this.props != prevProps || this.state != prevState){
+            axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${this.props.videoId}&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet,statistics`)
+            .then( videoInfo => {
+                videoInfo = videoInfo.data.items[0];
+                let searchTerm = videoInfo.snippet.tags[1] + '+' + videoInfo.snippet.tags[4] + '+' + videoInfo.snippet.tags[2];
+                axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&q=${ searchTerm }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`)
+                .then( RecommendedVideos => {
+                    this.setState({
+                        videoInfo: videoInfo,
+                        videoList: RecommendedVideos.data.items
+                    })
+                })
+            })
+        }
+    }
+
     handleLike(){
         this.setState({
             videoInfo: Object.assign({}, this.state.videoInfo, {
@@ -74,7 +91,7 @@ class VideoPage extends Component {
                     </div>
                     
                     <VideoTitleContainer 
-                    snippet={ this.state.videoInfo.snippet || {} }
+                    snippet={ this.state.videoInfo.snippet || {title: ''} }
                     videoId={ this.state.videoInfo.id }
                     statistics={ this.state.videoInfo.statistics || {} }
                     handleLike={ this.handleLike }
