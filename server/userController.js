@@ -26,7 +26,7 @@ module.exports = {
     let commentText = req.body.text;
     let date = new Date();
     let userId = 4;
-    db.postCommentToVideo([commentText, videoId, date, userId], function(err, response){
+    db.postCommentToVideo([commentText, userId, videoId, date], function(err, response){
       return res.status(200).json('ok');
     })
   }

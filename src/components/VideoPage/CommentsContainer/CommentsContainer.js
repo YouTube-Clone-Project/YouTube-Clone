@@ -51,15 +51,19 @@ class CommentsContainer extends Component {
         })
     }
 
-    postUserComment(){
-        let newComment = this.state.userInput;
-        // axios.post( '/api/comments/' + this.props.videoId, {
-        //     "text": this.state.userInput
-        // })
-        // .then( res => {})
-        this.setState({
-            comments: [newComment, ...this.state.comments],
-            userInput: ''
+    postUserComment(e){
+        e.preventDefault();
+        axios.post( '/api/comments/' + this.props.videoId, {
+            "text": this.state.userInput
+        })
+        .then( () => {
+            axios.get( '/api/comments/' + this.props.videoId )
+            .then( res => {
+                this.setState({
+                    comments: res.data,
+                    userInput: ''
+                })
+            })
         })
     }
 
@@ -102,8 +106,8 @@ class CommentsContainer extends Component {
                             return  <div key={index} className='individual_comment'>
                                             <div className='user_comment_thumbnail'></div>
                                             <ul id="user_info_comment">
-                                                <li id="comment_user_name">{ comment.userid }</li>
-                                                <li id="comment_posted">{ comment.comment_date }</li>
+                                                <li id="comment_user_name">{ comment.firstname }</li>
+                                                <li id="comment_posted">{ comment.vid_date }</li>
                                             </ul>
                                             <p id="comment_comment">{ comment.content }</p>
                                             
