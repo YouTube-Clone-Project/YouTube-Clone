@@ -40,24 +40,7 @@ passport.use(new GoogleStrategy({
   clientSecret: config.auth0.clientSecret,
   callbackURL: '/auth/callback'
   },
-  function(accessToken,refreshToken,profile, done){
-      db.find_by_id([profile.id],function(err,user){
-
-          if(!user[0]){//if there isnt one, create!!
-            console.log('CREATING USER');
-            console.log('profile');
-            db.create_google_user([profile.id,profile.name.familyName, profile.name.givenName, accessToken],function(err,user){
-              console.log('USER CREATED',user);
-              return done(err,user);//goes to serialize user
-            })
-          }else{//if we find a user, return it
-            console.log('FOUND USER', user)
-            return done(err,user);
-          }
-
-      })
-
-  }
+  userController.findById
 
 ));
 passport.serializeUser(function(user,done){
