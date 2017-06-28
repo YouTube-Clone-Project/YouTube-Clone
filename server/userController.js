@@ -26,7 +26,7 @@ module.exports = {
     let videoId = req.params.videoId;
     let commentText = req.body.text;
     let date = new Date();
-    let userId = 4;
+    let userId = req.session.passport.user[0].id;
     db.postCommentToVideo([commentText, userId, videoId, date], function(err, response){
       return res.status(200).json('ok');
     })
