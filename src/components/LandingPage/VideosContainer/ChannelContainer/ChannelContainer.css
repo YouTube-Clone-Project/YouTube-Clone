@@ -15,6 +15,7 @@ a{
     border-top: 1px solid #e3e3e3;
     padding-right: 20px;
     padding-left: 20px;
+    padding-top: 8px;
 }
 #video_channel_name{
     position: absolute;
@@ -29,7 +30,7 @@ a{
 #subscribe_bttn{
     position: absolute;
     right: 96px;
-    top: 5px;
+    top: 8px;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 13px;
     text-align: right;
@@ -49,7 +50,7 @@ a{
 #subscribers_count{
     position: absolute;
     right: 41px;
-    top: 5px;
+    top: 8px;
     font-family: 'Roboto Condensed', sans-serif;
     font-size: 13px;
     height: 22px;
@@ -70,7 +71,7 @@ a{
     opacity: 0.2;
     position: absolute;
     right: 15px;
-    top: 5px;
+    top: 10px;
 }
 
 #not_interested_bttn:hover{
@@ -107,7 +108,7 @@ a{
     font-family: 'Roboto Condensed', sans-serif;
     color: #167ac6;
     /*text-overflow: ellipsis;*/
-    height: 45px;
+    height: 37px;
     width: 97%;
     font-weight: 600;
     margin-top: 5px;
