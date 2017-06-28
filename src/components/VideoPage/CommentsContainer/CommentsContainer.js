@@ -19,10 +19,12 @@ class CommentsContainer extends Component {
                 },
                 
             ],
-            clicked: false
+            clicked: false,
+            reportClicked: false
         }
         this.handleCommentFilterChange = this.handleCommentFilterChange.bind(this);
-       this.formatDate = this.formatDate.bind(this);
+        this.formatDate = this.formatDate.bind(this);
+        this.handleReportClick = this.handleReportClick.bind(this)
     }
 
    componentDidMount(){
@@ -64,6 +66,12 @@ class CommentsContainer extends Component {
             }
     }
 
+    handleReportClick(){
+        this.setState({
+            reportClicked: !this.state.reportClicked
+        });
+    }
+
     render() {
         let filterBttn = null;
         if(this.state.clicked){
@@ -71,6 +79,12 @@ class CommentsContainer extends Component {
                 <p>Top Comments</p>
                 <p>Newest First</p>
             </div>
+        }
+        let reportBttn = null;
+        if(this.state.reportClicked){
+            reportBttn = <div id="report_content">
+                    <p>Report spam or abuse</p>
+                </div>
         }
         return (
             <div className='comments_wrapper'>
@@ -118,6 +132,10 @@ class CommentsContainer extends Component {
                                                     <li><div id="thumb_down"></div></li>
                                                 </ul>
                                             </div>
+                                            <div id="report_bttn" >
+                                                <div id="report_bttn_img" onClick={ this.handleReportClick }></div>
+                                            </div>
+                                            {reportBttn}
                                         </div>
                                     
                         })
