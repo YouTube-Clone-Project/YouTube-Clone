@@ -17,10 +17,7 @@ import AboutPage from './components/Footer/Press/About.js'
 export default (
     <Switch>
         <Route component={ LandingPage } path='/' exact />
-
-
         <Route component={ LoginPage } path ='/login'/>
-
         <Route component={ VideoPage } path='/video/:videoId' />
         <Route component={SearchResults} path='/search/:userInput' />
         <Route component={PressPage} path='/Press' />
@@ -30,6 +27,7 @@ export default (
         <Route component={DevelopersPage} path='/Developers' />
         <Route component={plusYTPage} path='/+YouTube' />
         <Route component={ AboutPage } path='/About' />
+
 
 
     </Switch>

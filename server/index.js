@@ -40,24 +40,7 @@ passport.use(new GoogleStrategy({
   clientSecret: config.auth0.clientSecret,
   callbackURL: '/auth/callback'
   },
-  function(accessToken,refreshToken,profile, done){
-      db.find_by_id([profile.id],function(err,user){
-
-          if(!user[0]){//if there isnt one, create!!
-            console.log('CREATING USER');
-            console.log('profile');
-            db.create_google_user([profile.id,profile.name.familyName, profile.name.givenName, accessToken],function(err,user){
-              console.log('USER CREATED',user);
-              return done(err,user);//goes to serialize user
-            })
-          }else{//if we find a user, return it
-            console.log('FOUND USER', user)
-            return done(err,user);
-          }
-
-      })
-
-  }
+  userController.findById
 
 ));
 passport.serializeUser(function(user,done){
@@ -80,8 +63,15 @@ app.get('/logout',function(req,res){
 
 app.get('/auth/google', passport.authenticate('google', { scope: ['https://www.googleapis.com/auth/plus.login', 'https://www.googleapis.com/auth/calendar'] }));
 
-app.get('/auth/callback', passport.authenticate('google', { failureRedirect: '/#/' }), function (req, res) {
-    res.redirect('/#/');
+app.get('/auth/callback', passport.authenticate('google', { failureRedirect: '/LoginPage' }), function (req, res) {
+    res.redirect('/');
 });
 
-app.listen(3000,console.log("you are now connected, database should work too"));
+//////////Other endpoints for the front end
+app.get('/api/comments/:videoId', userController.getCommentsByVideo);
+app.get('/api/subscriptions', userController.getUserSubscriptions);
+app.post('/api/comments/:videoId', userController.postCommentToVideo);
+app.post('/api/subscribe/:channelName', userController.subscribeToChannel);
+
+
+app.listen(3000,console.log("you are now connected on 3000, database should work too"));

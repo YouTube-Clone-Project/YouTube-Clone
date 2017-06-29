@@ -28,7 +28,13 @@ class VideoPage extends Component {
         axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${this.props.videoId}&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet,statistics`)
         .then( videoInfo => {
             videoInfo = videoInfo.data.items[0];
-            let searchTerm = videoInfo.snippet.tags[0] + '+' + videoInfo.snippet.tags[1] + '+' + videoInfo.snippet.tags[2];
+            if (videoInfo.snippet.tags){
+                if (videoInfo.snippet.tags[0] && videoInfo.snippet.tags[1] && videoInfo.snippet.tags[2]){
+                    var searchTerm = videoInfo.snippet.tags[0] + '+' + videoInfo.snippet.tags[1] + '+' + videoInfo.snippet.tags[2];
+                }else{
+                    var searchTerm = 'funny+cats'
+                }
+            }
             axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&q=${ searchTerm }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`)
             .then( RecommendedVideos => {
                 this.setState({
@@ -40,11 +46,17 @@ class VideoPage extends Component {
     }
 
     componentDidUpdate(prevProps, prevState){
-        if (this.props != prevProps || this.state != prevState){
+        if ( this.props !== prevProps ){
             axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${this.props.videoId}&key=AIzaSyCuuFUnpR3Gm-ai-tS252apbm0adv10PAI&part=snippet,statistics`)
             .then( videoInfo => {
                 videoInfo = videoInfo.data.items[0];
-                let searchTerm = videoInfo.snippet.tags[1] + '+' + videoInfo.snippet.tags[4] + '+' + videoInfo.snippet.tags[2];
+                if (videoInfo.snippet.tags){
+                    if (videoInfo.snippet.tags[1] && videoInfo.snippet.tags[4] && videoInfo.snippet.tags[2]){
+                        var searchTerm = videoInfo.snippet.tags[1] + '+' + videoInfo.snippet.tags[4] + '+' + videoInfo.snippet.tags[2];
+                    }else{
+                        var searchTerm = 'funny+cats'
+                    }
+                }
                 axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=relevance&q=${ searchTerm }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`)
                 .then( RecommendedVideos => {
                     this.setState({
@@ -100,7 +112,8 @@ class VideoPage extends Component {
                     <VideoDescriptionBox 
                     snippet={ this.state.videoInfo.snippet || {} } />
 
-                    <CommentsContainer />
+                    <CommentsContainer
+                    videoId={ this.state.videoInfo.id } />
         
                 </section>
 

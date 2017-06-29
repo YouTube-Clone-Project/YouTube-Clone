@@ -13,7 +13,11 @@ export default function videoContainer(){
                 <ChannelContainer search="new+zealand+travel+video"/>
                 <ChannelContainer search="best+react+tutorial"/>
                 <ChannelContainer search="funny+cat+videos"/>
+                <section id="load_more_container">
+                    <div id="load_more">Load more</div>
+                </section>
             </div>
+            
         </section>
     )
 }
