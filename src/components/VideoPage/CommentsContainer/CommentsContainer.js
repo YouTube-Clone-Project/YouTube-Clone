@@ -20,10 +20,13 @@ class CommentsContainer extends Component {
                 
             ],
             clicked: false,
-            reportClicked: false
+            reportClicked: false,
+            likeCount: 0,
         }
         this.handleCommentFilterChange = this.handleCommentFilterChange.bind(this);
         this.formatDate = this.formatDate.bind(this);
+        this.handleLike = this.handleLike.bind(this);
+        this.handleDislike = this.handleDislike.bind(this);
         this.handleReportClick = this.handleReportClick.bind(this)
     }
 
@@ -72,6 +75,15 @@ class CommentsContainer extends Component {
         });
     }
 
+    handleLike(){
+        this.setState({
+            likeCount: this.state.likeCount + 1
+        })
+    }
+    handleDislike(){
+        let count = 0;
+        count++
+    }
     render() {
         let filterBttn = null;
         if(this.state.clicked){
@@ -127,9 +139,9 @@ class CommentsContainer extends Component {
                                                 <ul id="reply_functions">
                                                     <li>Reply</li>
                                                     <li><img src={ bullet }/></li>
-                                                    <li>0</li>
-                                                    <li><div id="thumb_up"></div></li>
-                                                    <li><div id="thumb_down"></div></li>
+                                                    <li>{ this.state.likeCount }</li>
+                                                    <li onClick={ this.handleLike }><div id="thumb_up"></div></li>
+                                                    <li onClick={ this.handleDislike }><div id="thumb_down"></div></li>
                                                 </ul>
                                             </div>
                                             <div id="report_bttn" >
