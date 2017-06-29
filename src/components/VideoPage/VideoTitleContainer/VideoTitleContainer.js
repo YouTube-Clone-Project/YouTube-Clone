@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import axios from 'axios';
+import {handleSubscription} from './../../../ducks/reducer'
 
 import './VideoTitleContainer.css';
 
@@ -18,6 +21,11 @@ class VideoTitleContainer extends Component {
         }
     }
 
+    subscribeTo(str){
+        this.props.handleSubscription();
+        axios.post(`/api/subscribe/${ str }`)
+    }
+
     render() {
         let {
             snippet,
@@ -31,7 +39,7 @@ class VideoTitleContainer extends Component {
                     <div className='channel_thumbnail'></div>
                     <div className='channel_container'>
                         <p key={1} className='channel_title'>{ snippet.channelTitle }</p>
-                        <div key={2} className='subscribe_button'>
+                        <div key={2} className='subscribe_button'onClick= { ()=> this.subscribeTo(snippet.channelTitle) }>
                             <div className='subscribe_play_button'></div>
                             <p>Subscribe</p>
                             <div className='num_subscribers_box'>
@@ -75,4 +83,10 @@ class VideoTitleContainer extends Component {
     }
 }
 
-export default VideoTitleContainer;
+function mapStateToProps(state){
+    return {
+        subscription: state.subscriptions
+    }
+}
+
+export default connect(mapStateToProps, { handleSubscription } )(VideoTitleContainer);

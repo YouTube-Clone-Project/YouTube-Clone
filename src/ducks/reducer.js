@@ -1,35 +1,35 @@
 import axios from 'axios';
 
-// import { getVideoInfo } from './../services/youtubeService.js';
 import getRecommendations from './../services/youtubeService.js';
 
-const GET_VIDEO_INFO = 'GET_VIDEO_INFO';
-const GET_VIDEO_INFO_PENDING = 'GET_VIDEO_INFO_PENDING';
-const GET_VIDEO_INFO_FULFILLED = 'GET_VIDEO_INFO_FULFILLED';
-const GET_VIDEO_INFO_REJECTED = 'GET_VIDEO_INFO_REJECTED';
 
+ const SUBSCRIPTIONS = 'SUBSCRIPTIONS'
 
 const initialState = {
   loading: false,
-  videoId: '0tuK0sk_D1M'
+  videoId: '0tuK0sk_D1M',
+  subscriptions: false
 }
 
 export default function reducer(state = initialState, action) {
   switch (action.type) {
-    // case GET_VIDEO_INFO_PENDING:
-    //   return {
-    //     loading: true,
-    //     videoId: ''
-    //   }
-    // case GET_VIDEO_INFO_FULFILLED:
-    //   return {
-    //     loading: false,
-    //     videoId: action.payload
-    //   }
+    case SUBSCRIPTIONS:
+      return {
+        subscriptions:action.payload,
+      }
     default:
       return state;
     }
 }
+
+
+export function handleSubscription(){
+    return{
+      type: SUBSCRIPTIONS,
+      payload: true
+      }
+        
+    }
 
 // export function getVideoInfo(videoId){
 //   return {

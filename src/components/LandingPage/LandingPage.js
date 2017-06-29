@@ -3,32 +3,27 @@ import { connect } from 'react-redux';
 import VideosContainer from './VideosContainer/VideosContainer';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-
+import {handleSubscription} from './../../ducks/reducer'
 import './LandingPage.css';
 
-// AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY API KEY ////
+// AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY //
 
 
 class LandingPage extends Component {
     constructor(props){
         super(props);
-        this.state = {
-            subscriptions: false
-        }
 
         this.handleSubscription = this.handleSubscription.bind(this)
     }
 
     handleSubscription(str){
-        this.setState({
-            subscriptions: true
-        })
+        this.props.handleSubscription();
         axios.post(`/api/subscribe/${ str }`)
     }
 
     render() {
         let subscriptionsBttn = null;
-        if(this.state.subscriptions){
+        if(this.props.subscription){
            subscriptionsBttn = <li id="landing"><Link to="subscriptions">Subscriptions</Link></li>
         }
         return (
@@ -47,4 +42,10 @@ class LandingPage extends Component {
     }
 }
 
-export default LandingPage;
+function mapStateToProps(state){
+    return {
+        subscription: state.subscriptions
+    }
+}
+
+export default connect(mapStateToProps, { handleSubscription } )(LandingPage);

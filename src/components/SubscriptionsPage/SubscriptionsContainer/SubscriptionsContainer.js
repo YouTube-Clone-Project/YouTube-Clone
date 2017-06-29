@@ -21,6 +21,7 @@ export default class SubscriptionsContainer extends Component{
             this.setState({
                 videosArr: res.data
             })
+            console.log(this.state.videosArr)
         })
     }
 
@@ -30,7 +31,8 @@ export default class SubscriptionsContainer extends Component{
             <section className="main_subscriptions_container">
                 <div id="subscriptions_container">
                 { videos.map( (video, id) => {
-                    return <SubscriptionsVideos />
+                    return <SubscriptionsVideos key={ id } channelName={ JSON.stringify(video.channelname) }/>
+                            
                     })
                 }
                     <section id="load_more_container">
@@ -39,7 +41,7 @@ export default class SubscriptionsContainer extends Component{
                 </div>
                 
             </section>
-    )
+        )
     }
     
 }

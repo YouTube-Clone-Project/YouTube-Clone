@@ -88,11 +88,12 @@ export default class ChannelContainer extends Component{
     }
 
     componentDidMount(){
-        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&order=relevance&q=${ this.props.search }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`).then( videosArr => {
+        console.log(this.props.channelName)
+        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=6&order=relevance&q=${ this.props.channelName }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`).then( videosArr => {
             this.setState({
                 videosArr: videosArr.data.items,
             })
-            // console.log(this.state)
+            
         })
     }
     
