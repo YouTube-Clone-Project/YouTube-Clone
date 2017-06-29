@@ -6,7 +6,7 @@ import './HamburgerDropdown.css';
   
 function MySideNav (props) {
 	return(
-    <div id='sideNav' style={props.style}> 
+		<div id='sideNav' style={props.style }> 
             <br></br>
             
           <div style={{ background: '#d0171f', color: '#fff'}}>
@@ -53,7 +53,7 @@ function MySideNav (props) {
 			<Nav id='sport'>
 				<NavText><icon1>  </icon1><item1>&nbsp; &nbsp; Sports highlights</item1></NavText>
             </Nav>
-			<Nav id='weather'>
+			<Nav id='aCup'>
 				<NavText><icon1> % </icon1><item1>&nbsp; &nbsp; America&#39;s Cup</item1></NavText>
             </Nav>
 			<hr></hr>

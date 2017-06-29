@@ -1,3 +1,9 @@
+#side-nav {
+    position: fixed;
+    top: relative;
+    
+}
+
 #home {
     background: '#d0171f';
     color: #fff;

@@ -1,14 +1,15 @@
 .main_header_section{
     width: 100%;
     height: 57px;
-    border-bottom: 1.5px solid #e3e3e3;
+    border-bottom: .5px solid rgb(210,210,210);
     position: relative;
 }
 .main_header_div{
     width: 100%;
     height: 56px;
     background: white;
-    position: relative;
+    position: fixed;
+    z-index: 1800;
 }
 #menu_logo{
     /*border: 2px solid lime;*/
