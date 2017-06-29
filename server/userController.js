@@ -31,6 +31,21 @@ module.exports = {
       return res.status(200).json('ok');
     })
   },
+
+  subscribeToChannel: function (req, res, next){
+    let channelName = req.params.channelName;
+    let userId = req.session.passport.user[0].id;
+    db.subscribeToChannel([channelName, userId], function(err, response){
+      return res.status(200).send('ok');
+    })
+  },
+
+  getUserSubscriptions: function (req, res, next){
+    let userId = req.session.passport.user[0].id;
+    db.getUserSubscriptions([userId], function(err, response){
+      return res.status(200).json(response);
+    })
+  },
     
   findById: function(accessToken,refreshToken,profile, done){
       db.find_by_id([profile.id],function(err,user){
