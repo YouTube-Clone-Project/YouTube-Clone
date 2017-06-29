@@ -82,21 +82,19 @@ class SearchResults extends Component{
         let howLongYear = thisYear - postedYear;
         let howLong = todayMonth - postedMonth;
         if(thisYear - postedYear === 0){
-        if(Math.abs(howLong) > 1){
-            return Math.abs(howLong) + ' months ago';
-        } else{
-            return Math.abs(howLong) + ' month ago';
+            if(Math.abs(howLong) > 1){
+                return Math.abs(howLong) + ' months ago';
+            } else{
+                return Math.abs(howLong) + ' month ago';
             }
         }
         if(thisYear - postedYear > 0){
-        if(Math.abs(howLongYear > 1)){
-            return Math.abs(howLongYear) + ' years ago';
-        } else {
-            return Math.abs(howLongYear) + ' year ago';
+            if(Math.abs(howLongYear > 1)){
+                return Math.abs(howLongYear) + ' years ago';
+            } else {
+                return Math.abs(howLongYear) + ' year ago';
+            }
         }
-        
-        }
-        
     }
 
     getViews(index){
@@ -182,15 +180,17 @@ class SearchResults extends Component{
         console.log(videos)
         return (
             <section className='main_search_container'>
+
                 <section id="first_box">
-                    {/*<p>Some results have been removed because Restricted Mode is enabled</p>*/}
                     <div id="filter_bttn" onClick={ this.filterClickedFn }>
                         <h1>Filters</h1>
                         <img src={ dropdown } />
                     </div>
                     <h2>{ this.getResults() }</h2>
                 </section>
+
                 { filterBttn }
+
                 <section className='main_video_search_container'>
                     {videos.map( (video, id) => {
                         return <div  key={ id }id='search_video_container'>
@@ -218,6 +218,7 @@ class SearchResults extends Component{
                         <div id="next_bttn" onClick={ this.getNextPage }><p>Next &#187;</p></div>
                     </section>
                 </section>
+                
             </section>
         )
     }
