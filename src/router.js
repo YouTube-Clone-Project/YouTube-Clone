@@ -12,12 +12,8 @@ export default (
     <Switch>
         <Route component={ LandingPage } path='/' exact />
         <Route component= { SubscriptionPage } path='/subscriptions'/>
-
         <Route component={ LoginPage } path ='/login'/>
-
         <Route component={ VideoPage } path='/video/:videoId' />
         <Route component={ SearchResults } path='/search/:userInput' />
-
-
     </Switch>
 )
