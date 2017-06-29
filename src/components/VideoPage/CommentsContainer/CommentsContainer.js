@@ -3,6 +3,7 @@ import axios from 'axios';
 import './CommentsContainer.css';
 import bullet from './../../Header/img/bullet.png';
 import userImg from './../../Header/img/photo.jpg';
+import down_arrow from './../../Header/img/drop_down_arrow.png';
 
 class CommentsContainer extends Component {
 
@@ -17,12 +18,16 @@ class CommentsContainer extends Component {
                     text: ''
                 },
             ],
-            userInput: ''
+            userInput: '',
+            clicked: false,
+            reportClicked: false
         }
 
-       this.formatDate = this.formatDate.bind(this);
-       this.handleUserInputChange = this.handleUserInputChange.bind(this);
-       this.postUserComment = this.postUserComment.bind(this);
+        this.formatDate = this.formatDate.bind(this);
+        this.handleUserInputChange = this.handleUserInputChange.bind(this);
+        this.postUserComment = this.postUserComment.bind(this);
+        this.handleCommentFilterChange = this.handleCommentFilterChange.bind(this);
+        this.handleReportClick = this.handleReportClick.bind(this)
     }
 
    componentDidMount(){
@@ -33,6 +38,7 @@ class CommentsContainer extends Component {
             })
         })
     }
+
 
     componentDidUpdate(prevProps, prevState){
         if ( this.props !== prevProps ){
@@ -72,7 +78,39 @@ class CommentsContainer extends Component {
         return timeAgo
     }
 
+    handleCommentFilterChange(){
+        this.setState({
+            clicked: !this.state.clicked
+        });
+            if(!this.state.clicked){
+            document.getElementById('comment_filter').style.background = '#e9e9e9'; 
+            } else if (this.state.clicked) {
+                document.getElementById('comment_filter').style.background = '#f8f8f8';
+            } else {
+                document.getElementById('comment_filter').style.background = '#f8f8f8';
+            }
+    }
+
+    handleReportClick(){
+        this.setState({
+            reportClicked: !this.state.reportClicked
+        });
+    }
+
     render() {
+        let filterBttn = null;
+        if(this.state.clicked){
+            filterBttn = <div id="filter_content">
+                <p>Top Comments</p>
+                <p>Newest First</p>
+            </div>
+        }
+        let reportBttn = null;
+        if(this.state.reportClicked){
+            reportBttn = <div id="report_content">
+                    <p>Report spam or abuse</p>
+                </div>
+        }
         return (
             <div className='comments_wrapper'>
                 <div className='comments_container'>
@@ -101,6 +139,11 @@ class CommentsContainer extends Component {
                     </div>
                 </div>
                 <section className='all_comments'>
+                    <div id="comment_filter" onClick={ this.handleCommentFilterChange }>
+                        <p>Top Comments</p>
+                        <div><img src={ down_arrow }/></div>
+                    </div>
+                    { filterBttn }
                 {
                     this.state.comments.map( (comment, index) => {
                         return  <div key={index} className='individual_comment'>
@@ -110,7 +153,7 @@ class CommentsContainer extends Component {
                                         <li id="comment_posted">{ comment.vid_date }</li>
                                     </ul>
                                     <p id="comment_comment">{ comment.content }</p>
-                                    
+                                            
                                     <div className='comment_reply_box'>
                                         <ul id="reply_functions">
                                             <li>Reply</li>
@@ -120,6 +163,10 @@ class CommentsContainer extends Component {
                                             <li><div id="thumb_down"></div></li>
                                         </ul>
                                     </div>
+                                    <div id="report_bttn" >
+                                        <div id="report_bttn_img" onClick={ this.handleReportClick }></div>
+                                    </div>
+                                    {reportBttn}
                                 </div>
                     })
                 }
