@@ -40,14 +40,15 @@ export default class Header extends Component {
 	else if(value === false){
 		 this.setState({css:
 			{visibility: "visible",
-			boxShadow: '12px 12px 6px rgba(180,180,180,.4)', 
+			boxShadow: '12px 12px 6px rgba(0,0,0,.1)', 
 			border: '.5px solid #bbb', 
 			backgroundColor: '#fff', 
 			color: '#444444',
 			width: 280, 
 			paddingTop:'0px', 
-			position: 'absolute', 
-			zIndex: '1900' }
+            position: 'fixed', 
+            top: '57px',
+			zIndex: '1700' }
 		})
 		return this.state.css;
     }
