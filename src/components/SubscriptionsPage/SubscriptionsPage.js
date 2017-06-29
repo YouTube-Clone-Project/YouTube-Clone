@@ -3,7 +3,7 @@ import { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
-// import SubscriptionsContainer from './SubscriptionsContainer/SubscriptionsContainer';
+import SubscriptionsContainer from './SubscriptionsContainer/SubscriptionsContainer';
 
 import './SubscriptionsPage.css';
 
@@ -25,7 +25,7 @@ export default class SubscriptionPage extends Component{
                             <li id="subscription">Subscriptions</li>
                         </ul>
                     </div>
-                    {/*<SubscriptionsContainer/>*/}
+                    <SubscriptionsContainer/>
                 </section>
         )
     }

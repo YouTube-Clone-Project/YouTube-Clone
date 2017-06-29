@@ -43,4 +43,6 @@
 
 #subscription a{
     cursor: pointer;
+    opacity: 0.6;
+    font-family: 'Roboto Condensed', sans-serif;
 }
