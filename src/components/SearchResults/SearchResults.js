@@ -27,6 +27,7 @@ class SearchResults extends Component{
                 },
             ],
             filterClicked: false,
+            pagination: {},
             views: [
                 Math.floor(Math.random() * 1500000 + 1).toLocaleString() + ' views',
                 Math.floor(Math.random() * 1500000 + 1).toLocaleString() + ' views',
@@ -45,22 +46,30 @@ class SearchResults extends Component{
         this.getViews = this.getViews.bind(this)
         this.getResults = this.getResults.bind(this)
         this.filterClickedFn = this.filterClickedFn.bind(this)
+        this.getPrevPage = this.getPrevPage.bind(this)
+        this.getNextPage = this.getNextPage.bind(this)
     }
 
     componentDidMount(){
         axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=viewCount&pageToken=CAoQAA&q=${this.props.userInput }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`).then( videoArr => {
             this.setState({
-                videoArr: videoArr.data.items
+                videoArr: videoArr.data.items,
+                pagination: videoArr.data
             })
+            console.log(this.state.pagination)
         })
+        
     }
 
-    componentDidUpdate(){
-        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=viewCount&pageToken=CAoQAA&q=${this.props.userInput }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`).then( videoArr => {
-            this.setState({
-                videoArr: videoArr.data.items
+    componentDidUpdate(prevProps, prevState){
+        if(this.props !== prevProps){
+            axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=viewCount&pageToken=CAoQAA&q=${this.props.userInput }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`).then( videoArr => {
+                this.setState({
+                    videoArr: videoArr.data.items,
+                    pagination: videoArr.data
+                })
             })
-        })
+        }
     }
 
     displayDate(dateStr){
@@ -100,6 +109,26 @@ class SearchResults extends Component{
     filterClickedFn(){
         this.setState({
             filterClicked: !this.state.filterClicked
+        })
+    }
+
+    getPrevPage(){
+        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=viewCount&pageToken=${ this.state.pagination.prevPageToken }&q=${this.props.userInput }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`).then( videoArr => {
+            this.setState({
+                videoArr: videoArr.data.items,
+                pagination: videoArr.data
+            })
+            console.log(this.state.pagination)
+        })
+    }
+
+    getNextPage(){
+        axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&maxResults=10&order=viewCount&pageToken=${ this.state.pagination.nextPageToken }&q=${this.props.userInput }&type=video&key=AIzaSyA6QnEmVEZ_b2ZQO8GLc7CTEU3g-xDyhFY`).then( videoArr => {
+            this.setState({
+                videoArr: videoArr.data.items,
+                pagination: videoArr.data
+            })
+            console.log(this.state.pagination)
         })
     }
 
@@ -184,6 +213,10 @@ class SearchResults extends Component{
                     </div>
                     }
                     )}
+                    <section className="pagination_bttn">
+                        <div id="prev_bttn" onClick={ this.getPrevPage }><p>&#171; Previous</p></div>
+                        <div id="next_bttn" onClick={ this.getNextPage }><p>Next &#187;</p></div>
+                    </section>
                 </section>
             </section>
         )
