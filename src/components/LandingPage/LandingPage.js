@@ -29,7 +29,7 @@ class LandingPage extends Component {
     render() {
         let subscriptionsBttn = null;
         if(this.state.subscriptions){
-           subscriptionsBttn = <li id="landing">Subscriptions</li>
+           subscriptionsBttn = <li id="landing"><Link to="subscriptions">Subscriptions</Link></li>
         }
         return (
             <section className='landing_main_container'>
