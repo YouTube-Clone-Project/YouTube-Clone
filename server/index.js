@@ -73,4 +73,15 @@ app.get('/api/subscriptions', userController.getUserSubscriptions);
 app.post('/api/comments/:videoId', userController.postCommentToVideo);
 app.post('/api/subscribe/:channelName', userController.subscribeToChannel);
 
+app.post('api/comments',function(req,res){
+  db.post_comment([req.session.passport.user[0].id],function(err,res){
+    if(!err){
+      res.status(200).send(response);
+      console.log(response);
+    }else{
+      res.send(err);
+    }
+  })
+})
+
 app.listen(3000,console.log("you are now connected on 3000, database should work too"));
