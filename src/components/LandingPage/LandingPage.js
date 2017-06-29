@@ -10,18 +10,37 @@ import './LandingPage.css';
 
 
 class LandingPage extends Component {
-    
+    constructor(props){
+        super(props);
+        this.state = {
+            subscriptions: false
+        }
+
+        this.handleSubscription = this.handleSubscription.bind(this)
+    }
+
+    handleSubscription(str){
+        this.setState({
+            subscriptions: true
+        })
+        axios.post(`/api/subscribe/${ str }`)
+    }
+
     render() {
+        let subscriptionsBttn = null;
+        if(this.state.subscriptions){
+           subscriptionsBttn = <li id="landing">Subscriptions</li>
+        }
         return (
             <section className='landing_main_container'>
                 <div className="landing_words">
                     <ul className="landing">
                         <li id="landing">Home</li>
                         <li id="landing">Trending</li>
-                        <li id="landing">Subscriptions</li>
+                        { subscriptionsBttn }
                     </ul>
                 </div>
-                <VideosContainer />
+                <VideosContainer subscribe={ this.handleSubscription }/>
             </section>
             
         );

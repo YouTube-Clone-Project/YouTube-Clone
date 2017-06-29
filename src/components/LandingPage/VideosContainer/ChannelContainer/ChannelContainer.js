@@ -86,6 +86,7 @@ export default class ChannelContainer extends Component{
         this.displayDate = this.displayDate.bind(this);
         this.getViews = this.getViews.bind(this);
         this.getSubscribers = this.getSubscribers.bind(this);
+        this.testFn = this.testFn.bind(this);
     }
 
     componentDidMount(){
@@ -132,12 +133,15 @@ export default class ChannelContainer extends Component{
         return Math.floor(Math.random() * 899) + ',' + Math.floor(Math.random() * 899 + 100);
     }
 
+    testFn(){
+        console.log('test');
+    }
     render(){
         let videos = this.state.videosArr;
         return(
             <div id="main_videos_container">
                 <div id="video_channel_name">{videos[0].snippet.channelTitle}</div>
-                <div id="subscribe_bttn"><div id="bttn_img"></div>Subscribe</div>
+                <div id="subscribe_bttn" onClick= { ()=> this.props.subscribeTo(videos[0].snippet.channelTitle) }><div id="bttn_img"></div>Subscribe</div>
                 <div id="subscribers_count">{this.getSubscribers()}</div>
                 <div id="not_interested_bttn"></div>
                 { videos.map( (video, id) => {
