@@ -30,7 +30,7 @@ export default class SubscriptionsContainer extends Component{
             <section className="main_subscriptions_container">
                 <div id="subscriptions_container">
                 { videos.map( (video, id) => {
-                    return <SubscriptionsVideos/>
+                    return <SubscriptionsVideos />
                     })
                 }
                     <section id="load_more_container">
