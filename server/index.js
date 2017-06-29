@@ -70,4 +70,15 @@ app.get('/auth/callback', passport.authenticate('google', { failureRedirect: '/L
 //////////Other endpoints for the front end
 app.get('/api/comments/:videoId', userController.getCommentsByVideo);
 
+app.post('api/comments',function(req,res){
+  db.post_comment([req.session.passport.user[0].id],function(err,res){
+    if(!err){
+      res.status(200).send(response);
+      console.log(response);
+    }else{
+      res.send(err);
+    }
+  })
+})
+
 app.listen(3000,console.log("you are now connected on 3000, database should work too"));
