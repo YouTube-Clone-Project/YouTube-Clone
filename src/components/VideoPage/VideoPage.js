@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 import VideoTitleContainer from './VideoTitleContainer/VideoTitleContainer.js';
+import ShareLinkBox from './ShareLinkBox/ShareLinkBox.js';
 import VideoDescriptionBox from './VideoDescriptionBox/VideoDescriptionBox.js';
 import CommentsContainer from './CommentsContainer/CommentsContainer.js';
 import RecommendedVideosContainer from './RecommendedVideosContainer/RecommendedVideosContainer.js';
@@ -108,6 +109,8 @@ class VideoPage extends Component {
                     statistics={ this.state.videoInfo.statistics || {} }
                     handleLike={ this.handleLike }
                     handleDislike={ this.handleDislike } />
+
+                    <ShareLinkBox />
                     
                     <VideoDescriptionBox 
                     snippet={ this.state.videoInfo.snippet || {} } />
