@@ -10,6 +10,13 @@ import './LandingPage.css';
 
 
 class LandingPage extends Component {
+    constructor(props){
+        super(props);
+    }
+
+    componentDidMount(){
+        document.body.scrollTop = 0;
+    }
     
     render() {
         return (

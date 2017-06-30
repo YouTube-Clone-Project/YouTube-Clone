@@ -47,6 +47,7 @@ class VideoPage extends Component {
                 })
             })
         })
+        document.body.scrollTop = 0;
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -70,6 +71,7 @@ class VideoPage extends Component {
                 })
             })
         }
+        document.body.scrollTop = 0;
     }
 
     handleShowSharebox(){

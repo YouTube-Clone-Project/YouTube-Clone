@@ -58,7 +58,7 @@ class SearchResults extends Component{
             })
             console.log(this.state.pagination)
         })
-        
+        document.body.scrollTop = 0;
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -70,6 +70,7 @@ class SearchResults extends Component{
                 })
             })
         }
+        document.body.scrollTop = 0;
     }
 
     displayDate(dateStr){
