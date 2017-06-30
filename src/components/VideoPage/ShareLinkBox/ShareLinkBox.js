@@ -23,6 +23,12 @@ class ShareLinkBox extends Component {
         }
     }
 
+    componentDidUpdate(){
+        this.setState({
+            url: `https://youtu.be/${ this.props.videoId }`
+        })
+    }
+
     handleURLChange(e){
         this.setState({
             url: e.target.value

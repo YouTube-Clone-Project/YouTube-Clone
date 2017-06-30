@@ -70,9 +70,6 @@ class VideoPage extends Component {
                 })
             })
         }
-        this.setState({
-            showShareBox: false 
-        })
     }
 
     handleShowSharebox(){
