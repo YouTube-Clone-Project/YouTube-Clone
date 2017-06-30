@@ -73,6 +73,7 @@
 .share_social_media div{
     width: 32px;
     height: 32px;
+    cursor: pointer;
 }
 
 #sm_twitter{

@@ -18,11 +18,14 @@ class VideoPage extends Component {
             videoInfo: {},
             videoList: [],
             videoId: props.videoId,
-            uniqueId: Math.floor(Math.random()*999)
+            uniqueId: Math.floor(Math.random()*999),
+            notify: false,
+            showShareBox: false
         }
 
         this.handleDislike = this.handleDislike.bind(this);
         this.handleLike = this.handleLike.bind(this);
+        this.handleShowSharebox = this.handleShowSharebox.bind(this);
     }
 
     componentDidMount(){
@@ -69,6 +72,12 @@ class VideoPage extends Component {
         }
     }
 
+    handleShowSharebox(){
+        this.setState({
+            showShareBox: !this.state.showShareBox
+        })
+    }
+
     handleLike(){
         this.setState({
             videoInfo: Object.assign({}, this.state.videoInfo, {
@@ -90,6 +99,11 @@ class VideoPage extends Component {
     }
 
     render() {
+        let shareLinkBox = null;
+        if (this.state.showShareBox){
+            shareLinkBox = <ShareLinkBox />
+        }
+
         return (
             <section className='videopage_main_container'>
 
@@ -108,9 +122,10 @@ class VideoPage extends Component {
                     videoId={ this.state.videoInfo.id }
                     statistics={ this.state.videoInfo.statistics || {} }
                     handleLike={ this.handleLike }
-                    handleDislike={ this.handleDislike } />
+                    handleDislike={ this.handleDislike } 
+                    showShareBox={ this.handleShowSharebox } />
 
-                    <ShareLinkBox />
+                    { shareLinkBox }
                     
                     <VideoDescriptionBox 
                     snippet={ this.state.videoInfo.snippet || {} } />

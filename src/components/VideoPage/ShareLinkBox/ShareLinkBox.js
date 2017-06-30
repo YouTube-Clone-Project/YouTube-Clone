@@ -8,10 +8,45 @@ class ShareLinkBox extends Component {
 
         this.state={
             startTime: '0:00',
-            url: 'https://youtu.be/WYeDsa4Tw0c'
+            url: 'https://youtu.be/WYeDsa4Tw0c',
+            checkboxMarked: false
         }
+
+        this.handleURLChange = this.handleURLChange.bind(this);
+        this.handleStartTimeChange = this.handleStartTimeChange.bind(this);
+        this.updateURL = this.updateURL.bind(this);
+        this.markCheckBox = this.markCheckBox.bind(this);
     }
-        
+
+    handleURLChange(e){
+        this.setState({
+            url: e.target.value
+        })
+    }
+
+    handleStartTimeChange(e){
+        this.setState({
+            startTime: e.target.value
+        })
+    }   
+
+    updateURL(e){
+        e.preventDefault();
+        let time = this.state.startTime.split(':');
+        let min = time[0];
+        let sec = time[1];
+        if (this.state.checkboxMarked){
+            this.setState({
+                url: this.state.url + `?t=${min}m${sec}s`
+            })
+        }
+    }    
+
+    markCheckBox(){
+        this.setState({
+            checkboxMarked: !this.state.checkboxMarked
+        })
+    } 
 
     render() {
 
@@ -44,14 +79,19 @@ class ShareLinkBox extends Component {
                         <div id='sm_digg'></div>
                     </div>
 
-                    <input className='share_url' value={ this.state.url } />
+                    <input className='share_url' 
+                    value={ this.state.url } 
+                    onChange={ this.handleURLChange } />
 
                     <div className='share_startat_container'>
-                        <input className='start_checkbox' type='checkbox' />
+                        <input className='start_checkbox' type='checkbox' onChange={ this.markCheckBox } />
                         <p className='start_at_p'>Start at:</p>
-                        <input className='share_start_time' value={ this.state.startTime } />
+                        <form onSubmit={ this.updateURL }>
+                            <input className='share_start_time' 
+                            value={ this.state.startTime } 
+                            onChange={ this.handleStartTimeChange } />
+                        </form>
                     </div>
-
                 </div>
             </div>
         );
