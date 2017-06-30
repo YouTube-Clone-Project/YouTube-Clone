@@ -136,8 +136,23 @@
     top: 6px;
     border-radius: 2px;
 }
-
 .num_subscribers_box{
+    width: 38px;
+    height: 25px;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 40;
+    font-size: 11px;
+    text-align: center;
+    line-height: 25px;
+    color: #888;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.num_subscribers_box_unsub{
     width: 38px;
     height: 25px;
     background: white;

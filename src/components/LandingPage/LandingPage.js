@@ -17,14 +17,17 @@ class LandingPage extends Component {
         super(props);
         this.state = {
             notify: false,
-            unsubNotify: false
+            unsubNotify: false,
+            canSubscribe: true,
         }
         this.handleSubscription = this.handleSubscription.bind(this)
-    }
+        this.handleUnsubscription = this.handleUnsubscription.bind(this)
+}
 
     handleSubscription(str){
         this.setState({
             notify:true,
+            canSubscribe: false,
         })
         setTimeout(()=> {
             this.setState({
@@ -38,6 +41,7 @@ class LandingPage extends Component {
     handleUnsubscription(str){
         this.setState({
             unsubNotify:true,
+            canSubscribe: true,
         })
         setTimeout(()=> {
             this.setState({
@@ -71,7 +75,11 @@ class LandingPage extends Component {
                         { subscriptionsBttn }
                     </ul>
                 </div>
-                <VideosContainer subscribe={ this.handleSubscription } unsubscribe={ this.handleUnsubscription }/>
+                <VideosContainer 
+                subscribe={ this.handleSubscription } 
+                unsubscribe={ this.handleUnsubscription }
+                canSubscribe={this.state.canSubscribe}
+                />
             </section>
             
         );
