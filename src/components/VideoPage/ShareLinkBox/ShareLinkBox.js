@@ -14,7 +14,6 @@ class ShareLinkBox extends Component {
 
         this.handleURLChange = this.handleURLChange.bind(this);
         this.handleStartTimeChange = this.handleStartTimeChange.bind(this);
-        this.updateURL = this.updateURL.bind(this);
         this.markCheckBox = this.markCheckBox.bind(this);
     }
 
@@ -28,25 +27,47 @@ class ShareLinkBox extends Component {
         this.setState({
             startTime: e.target.value
         })
-    }   
-
-    updateURL(e){
-        e.preventDefault();
-        let time = this.state.startTime.split(':');
-        let min = time[0];
-        let sec = time[1];
-        if (this.state.checkboxMarked){
-            this.setState({
-                url: this.state.url + `?t=${min}m${sec}s`
-            })
-        }
-    }    
+    }
 
     markCheckBox(){
-        this.setState({
-            checkboxMarked: !this.state.checkboxMarked
-        })
-    } 
+        let time = this.state.startTime.slice();
+        let min, sec;
+        if (time.indexOf(':') > 0){
+            time = this.state.startTime.split(':');
+            min = parseInt(time[0], 10);
+            sec = parseInt(time[1], 10);
+        }else{
+            sec = parseInt(time, 10);
+        }
+        let newURL = this.state.url.split('').slice();
+        if (this.state.checkboxMarked){
+            newURL.splice(newURL.indexOf('?'))
+            newURL = newURL.join('');
+            this.setState({
+                checkboxMarked: false,
+                url: newURL
+            })
+        }else{
+            if (min !== 0 || sec !== 0){
+                if (min && sec){
+                    this.setState({
+                        url: this.state.url + `?t=${min}m${sec}s`,
+                        checkboxMarked: true
+                    })
+                }else if (min && !sec){
+                    this.setState({
+                        url: this.state.url + `?t=${min}m`,
+                        checkboxMarked: true
+                    })
+                }else if (!min && sec){
+                    this.setState({
+                        url: this.state.url + `?t=${sec}s`,
+                        checkboxMarked: true
+                    })
+                }
+            }
+        }
+    }
 
     render() {
 
@@ -86,11 +107,9 @@ class ShareLinkBox extends Component {
                     <div className='share_startat_container'>
                         <input className='start_checkbox' type='checkbox' onChange={ this.markCheckBox } />
                         <p className='start_at_p'>Start at:</p>
-                        <form onSubmit={ this.updateURL }>
-                            <input className='share_start_time' 
-                            value={ this.state.startTime } 
-                            onChange={ this.handleStartTimeChange } />
-                        </form>
+                        <input className='share_start_time' 
+                        value={ this.state.startTime } 
+                        onChange={ this.handleStartTimeChange } />
                     </div>
                 </div>
             </div>
