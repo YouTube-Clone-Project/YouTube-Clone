@@ -1,0 +1,34 @@
+.unsub_main_notify_section{
+    height: 12.9px;
+    width: 165px;
+    /*background: #167ac6;*/
+    z-index: 3;
+}
+
+#unsub_notify_div{
+    height: 35px;
+    width: 165px;
+    background: #167ac6;
+    z-index: 3;
+    padding-right: 15px;
+    position: absolute;
+    left: 30px;
+}
+
+#unsub_notify_div p{
+    color: white;
+    font-size: 14px;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: right;
+    vertical-align: middle;
+    line-height: 35px;
+    font-weight: bold;
+}
+
+#unsub_notify_div img{
+    height: 15px;
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    filter: brightness(0) invert(1);
+}

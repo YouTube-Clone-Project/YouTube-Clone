@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 import SubscriptionNotify from './../SubscribeNotify/SubscribeNotify';
+import UnsubscribeNotify from './../UnsubscribeNotify/UnsubscribeNotify';
 import VideoTitleContainer from './VideoTitleContainer/VideoTitleContainer.js';
 import VideoDescriptionBox from './VideoDescriptionBox/VideoDescriptionBox.js';
 import CommentsContainer from './CommentsContainer/CommentsContainer.js';
@@ -19,11 +20,13 @@ class VideoPage extends Component {
             videoList: [],
             videoId: props.videoId,
             uniqueId: Math.floor(Math.random()*999),
-            notify: false
+            notify: false,
+            unsubNotify: false,
         }
 
         this.handleDislike = this.handleDislike.bind(this);
         this.handleSubscription = this.handleSubscription.bind(this);
+        this.handleUnsubscription = this.handleUnsubscription.bind(this);
         this.handleLike = this.handleLike.bind(this);
     }
 
@@ -102,14 +105,30 @@ class VideoPage extends Component {
         }, 2500)
     }
 
+    handleUnsubscription(str){
+        this.setState({
+            unsubNotify:true,
+        })
+        setTimeout(()=> {
+            this.setState({
+                unsubNotify: false,
+            })
+        }, 2500)
+    }
+
     render() {
         let notifyPrompt = null;
         if(this.state.notify){
             notifyPrompt = <SubscriptionNotify/>
         }
+        let unsubNotifyPrompt = null;
+        if(this.state.unsubNotify){
+            unsubNotifyPrompt = <UnsubscribeNotify/>
+        }
         return (
             <section className='videopage_main_container'>
                 { notifyPrompt }
+                { unsubNotifyPrompt }
                 <section className='main_content_wrapper'>
 
                     <div className='iframe_placeholder'>
@@ -127,6 +146,7 @@ class VideoPage extends Component {
                     handleLike={ this.handleLike }
                     handleDislike={ this.handleDislike }
                     notify={ this.handleSubscription }
+                    unsubNotify={ this.handleUnsubscription }
                      />
                     
                     <VideoDescriptionBox 
