@@ -27,13 +27,17 @@ module.exports = {
     let commentText = req.body.text;
     let date = new Date();
     let userId = req.session.passport.user[0].id;
-    db.postCommentToVideo([commentText, userId, videoId, date], function(err, response){
-      if(!err){
-        res.status(200).json(response);
-      }else{
-        res.json(err);
-      }
-    })
+    if (videoId && commentText && userId){
+      db.postCommentToVideo([commentText, userId, videoId, date], function(err, response){
+        if(!err){
+          res.status(200).json(response);
+        }else{
+          res.json(err);
+        }
+      })
+    }else{
+      res.status(200).send('must be logged in to comment');
+    }
   },
 
   subscribeToChannel: function (req, res, next){
@@ -46,9 +50,14 @@ module.exports = {
 
   getUserSubscriptions: function (req, res, next){
     let userId = req.session.passport.user[0].id;
-    db.getUserSubscriptions([userId], function(err, response){
-      return res.status(200).json(response);
-    })
+    if (userId){
+      db.getUserSubscriptions([userId], function(err, response){
+        return res.status(200).json(response);
+      })
+    }else{
+      res.status(200).send('must be logged in to see subscriptions');
+    }
+
   },
     
   findById: function(accessToken,refreshToken,profile, done){

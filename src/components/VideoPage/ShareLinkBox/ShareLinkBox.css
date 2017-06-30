@@ -1,0 +1,183 @@
+
+.share_box_wrapper{
+    width: 100%;
+    height: 194px;
+    position: relative;
+    padding: 10px 0px 10px 0 px;
+}
+
+.share_box_container{
+    width: 855px;
+    height: 184px;
+    background: #fff;
+    padding: 10px 10px 10px 10px;
+    position: absolute;
+    left: 35px;
+    overflow: hidden;
+}
+
+.share_box_header{
+    width: 100%;
+    height: 35px;
+    border-bottom: 1px solid #ccc;
+}
+
+.share_box_header ul{
+    width: 24%;
+    height: 35px;
+    line-height: 35px;
+    vertical-align: middle;
+    display: flex;
+    justify-content: space-between;
+}
+
+.share_box_header li{
+    cursor: pointer;
+    color: #bbb;
+}
+
+.share_box_header li:hover{
+    color: #555;
+    border-bottom: 2px solid #c00;
+}
+
+#share_box_share{
+    border-bottom: 2px solid #c00;
+    color: #555;
+}
+
+.share_close_x{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 3px;
+    top: 6px;
+    font-size: 19px;
+    color: #ccc;
+}
+
+.share_close_x:hover{
+    cursor: pointer;
+    color: #777;
+}
+
+.share_social_media{
+    width: 55%;
+    height: 52px;
+    padding-top: 12px;
+    padding-bottom: 4px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.share_social_media div{
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+}
+
+#sm_twitter{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 -1385px;
+    background-size: auto;
+}
+
+#sm_facebook{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 -180px;
+    background-size: auto;
+}
+
+#sm_google{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 -420px;
+    background-size: auto;
+}
+
+#sm_blogger{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 -1112px;
+    background-size: auto;
+}
+
+#sm_reddit{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 -1220px;
+    background-size: auto;
+}
+
+#sm_tumblr{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 -384px;
+    background-size: auto;
+}
+
+#sm_pinterest{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 -108px;
+    background-size: auto;
+}
+
+#sm_digg{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 -276px;
+    background-size: auto;
+}
+
+#sm_blue_russian{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 -896px;
+    background-size: auto;
+}
+
+#sm_linkedin{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 -932px;
+    background-size: auto;
+}
+
+#sm_stumbleupon{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 -312px;
+    background-size: auto;
+}
+
+#sm_orange_russian{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 0;
+    background-size: auto;
+}
+
+#sm_livejournal{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-sharing-vfln1IZka.webp) 0 -492px;
+    background-size: auto;
+}
+
+.share_url{
+    width: 48%;
+    height: 30px;
+    color: #555;
+    font-size: 20px;
+    padding-left: 2px;
+}
+
+.share_startat_container{
+    width: 30%;
+    height: 50px;
+    position: relative;
+}
+
+.start_checkbox{
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 2px;
+    top: 15px;
+    border: 1px solid lightblue;
+    background: white;
+}
+
+.start_at_p{
+    font-size: 11px;
+    position: absolute;
+    left: 24px;
+    top: 20px;
+}
+
+.share_start_time{
+    width: 60px;
+    height: 18px;
+    position: absolute;
+    left: 66px;
+    top: 15px;
+    padding-left: 5px;
+}
+

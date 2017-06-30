@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import axios from 'axios';
 
 import VideoTitleContainer from './VideoTitleContainer/VideoTitleContainer.js';
+import ShareLinkBox from './ShareLinkBox/ShareLinkBox.js';
 import VideoDescriptionBox from './VideoDescriptionBox/VideoDescriptionBox.js';
 import CommentsContainer from './CommentsContainer/CommentsContainer.js';
 import RecommendedVideosContainer from './RecommendedVideosContainer/RecommendedVideosContainer.js';
@@ -17,11 +18,14 @@ class VideoPage extends Component {
             videoInfo: {},
             videoList: [],
             videoId: props.videoId,
-            uniqueId: Math.floor(Math.random()*999)
+            uniqueId: Math.floor(Math.random()*999),
+            notify: false,
+            showShareBox: false
         }
 
         this.handleDislike = this.handleDislike.bind(this);
         this.handleLike = this.handleLike.bind(this);
+        this.handleShowSharebox = this.handleShowSharebox.bind(this);
     }
 
     componentDidMount(){
@@ -43,6 +47,7 @@ class VideoPage extends Component {
                 })
             })
         })
+        document.body.scrollTop = 0;
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -66,6 +71,13 @@ class VideoPage extends Component {
                 })
             })
         }
+        document.body.scrollTop = 0;
+    }
+
+    handleShowSharebox(){
+        this.setState({
+            showShareBox: !this.state.showShareBox
+        })
     }
 
     handleLike(){
@@ -89,6 +101,13 @@ class VideoPage extends Component {
     }
 
     render() {
+        let shareLinkBox = null;
+        if (this.state.showShareBox){
+            shareLinkBox = <ShareLinkBox 
+                            videoId={ this.state.videoInfo.id } 
+                            />
+        }
+
         return (
             <section className='videopage_main_container'>
 
@@ -107,7 +126,10 @@ class VideoPage extends Component {
                     videoId={ this.state.videoInfo.id }
                     statistics={ this.state.videoInfo.statistics || {} }
                     handleLike={ this.handleLike }
-                    handleDislike={ this.handleDislike } />
+                    handleDislike={ this.handleDislike } 
+                    showShareBox={ this.handleShowSharebox } />
+
+                    { shareLinkBox }
                     
                     <VideoDescriptionBox 
                     snippet={ this.state.videoInfo.snippet || {} } />
