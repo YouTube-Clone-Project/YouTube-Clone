@@ -8,13 +8,19 @@ class ShareLinkBox extends Component {
 
         this.state={
             startTime: '0:00',
-            url: 'https://youtu.be/WYeDsa4Tw0c',
+            url: `https://youtu.be/${ this.props.videoId }`,
             checkboxMarked: false
         }
 
         this.handleURLChange = this.handleURLChange.bind(this);
         this.handleStartTimeChange = this.handleStartTimeChange.bind(this);
         this.markCheckBox = this.markCheckBox.bind(this);
+    }
+
+    componentWillReceiveProps(newProps){
+        if (this.props !== newProps){
+            this.props = newProps;
+        }
     }
 
     handleURLChange(e){

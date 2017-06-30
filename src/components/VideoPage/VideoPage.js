@@ -70,6 +70,9 @@ class VideoPage extends Component {
                 })
             })
         }
+        this.setState({
+            showShareBox: false 
+        })
     }
 
     handleShowSharebox(){
@@ -101,7 +104,9 @@ class VideoPage extends Component {
     render() {
         let shareLinkBox = null;
         if (this.state.showShareBox){
-            shareLinkBox = <ShareLinkBox />
+            shareLinkBox = <ShareLinkBox 
+                            videoId={ this.state.videoInfo.id } 
+                            />
         }
 
         return (
