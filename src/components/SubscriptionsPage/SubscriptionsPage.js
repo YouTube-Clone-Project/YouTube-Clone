@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom'
 import axios from 'axios'
 import SubscriptionsContainer from './SubscriptionsContainer/SubscriptionsContainer';
 
+
 import './SubscriptionsPage.css';
 
 export default class SubscriptionPage extends Component{
@@ -24,6 +25,9 @@ export default class SubscriptionPage extends Component{
                             <li id="subscription">Trending</li>
                             <li id="subscription">Subscriptions</li>
                         </ul>
+                    </div>
+                    <div id="subscriptions_title">
+                        <p>From Your Channels</p>
                     </div>
                     <SubscriptionsContainer/>
                 </section>

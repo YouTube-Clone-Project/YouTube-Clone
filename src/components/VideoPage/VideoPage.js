@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import axios from 'axios';
 
+import SubscriptionNotify from './../SubscribeNotify/SubscribeNotify';
 import VideoTitleContainer from './VideoTitleContainer/VideoTitleContainer.js';
 import VideoDescriptionBox from './VideoDescriptionBox/VideoDescriptionBox.js';
 import CommentsContainer from './CommentsContainer/CommentsContainer.js';
@@ -17,10 +18,12 @@ class VideoPage extends Component {
             videoInfo: {},
             videoList: [],
             videoId: props.videoId,
-            uniqueId: Math.floor(Math.random()*999)
+            uniqueId: Math.floor(Math.random()*999),
+            notify: false
         }
 
         this.handleDislike = this.handleDislike.bind(this);
+        this.handleSubscription = this.handleSubscription.bind(this);
         this.handleLike = this.handleLike.bind(this);
     }
 
@@ -88,10 +91,25 @@ class VideoPage extends Component {
         })
     }
 
+    handleSubscription(str){
+        this.setState({
+            notify:true,
+        })
+        setTimeout(()=> {
+            this.setState({
+                notify: false,
+            })
+        }, 2500)
+    }
+
     render() {
+        let notifyPrompt = null;
+        if(this.state.notify){
+            notifyPrompt = <SubscriptionNotify/>
+        }
         return (
             <section className='videopage_main_container'>
-
+                { notifyPrompt }
                 <section className='main_content_wrapper'>
 
                     <div className='iframe_placeholder'>
@@ -107,7 +125,9 @@ class VideoPage extends Component {
                     videoId={ this.state.videoInfo.id }
                     statistics={ this.state.videoInfo.statistics || {} }
                     handleLike={ this.handleLike }
-                    handleDislike={ this.handleDislike } />
+                    handleDislike={ this.handleDislike }
+                    notify={ this.handleSubscription }
+                     />
                     
                     <VideoDescriptionBox 
                     snippet={ this.state.videoInfo.snippet || {} } />

@@ -131,11 +131,11 @@ export default class ChannelContainer extends Component{
     render(){
         let videos = this.state.videosArr;
         return(
-            <div id="main_videos_container">
+            <div id="main_subscriptions_video_container">
                 { videos.map( (video, id) => {
                     return <Link to={'/video/' + videos[id].id.videoId}>
-                                <div key={ id } className="videos_info_container">
-                                    <img id="video_info_img"src={videos[id].snippet.thumbnails.medium.url}/>
+                                <div key={ id } className="subscriptions_info_container">
+                                    <img id="subscriptions_info_img"src={videos[id].snippet.thumbnails.medium.url}/>
                                     <h1>{videos[id].snippet.title}</h1>
                                     <div className="watch_container">
                                         <img id="watch_later" src={watch_later}/>

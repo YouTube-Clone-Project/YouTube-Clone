@@ -23,7 +23,8 @@ class VideoTitleContainer extends Component {
 
     subscribeTo(str){
         this.props.handleSubscription();
-        axios.post(`/api/subscribe/${ str }`)
+        axios.post(`/api/subscribe/${ str }`);
+        this.props.notify();
     }
 
     render() {

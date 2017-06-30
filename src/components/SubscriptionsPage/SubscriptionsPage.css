@@ -4,6 +4,16 @@
     /*background: lightcoral;*/
     border-bottom: 1.5px solid #e3e3e3;
 }
+
+#subscriptions_title{
+    font-family: Roboto Condensed,sans-serif;
+    font-weight: 700;
+    font-size: 13.1px;
+    position: absolute;
+    z-index: 2;
+    top: 148px;
+    left: 82px;
+}
 .subscription{
     /*border:2px solid black;*/
     height: 38px;
