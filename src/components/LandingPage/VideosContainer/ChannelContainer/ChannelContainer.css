@@ -44,6 +44,46 @@ a{
     border-bottom-left-radius: 3px;
     cursor: pointer;
 }
+
+#landing_unsubscribe_bttn{
+    position: absolute;
+    right: 96px;
+    top: 8px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    text-align: right;
+    color: #737373;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    height: 22px;
+    width: 86px;
+    padding-right: 7px;
+    padding-top: 4px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    cursor: pointer;
+}
+
+#landing_unsubscribe_bttn_hover{
+    position: absolute;
+    right: 96px;
+    top: 8px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    text-align: right;
+    color: #737373;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    height: 22px;
+    width: 86px;
+    padding-right: 2px;
+    padding-top: 4px;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    cursor: pointer;
+    /*display:none;*/
+}
+
 #subscribe_bttn:hover{
     background: #cc181e;
 }
@@ -62,6 +102,26 @@ a{
     text-align: center;
     vertical-align: middle;
     line-height: 22px;
+}
+
+#unsub_bttn_img{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -898px -128px;
+    background-size: auto;
+    width: 16px;
+    height: 12px;
+    position: absolute;
+    left: 3px;
+    top: 4px;
+}
+
+#unsub_bttn_img_hover{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -479px -214px;
+    background-size: auto;
+    width: 16px;
+    height: 12px;
+    position: absolute;
+    left: 2px;
+    top: 4px;
 }
 #not_interested_bttn{
     background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -520px -149px;
