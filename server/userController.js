@@ -60,8 +60,9 @@ module.exports = {
   },
 
   checkForSubscriptions: function(req, res, next){
-    let channelName = req.params.channelName;
+    let channelName = req.params.channelname;
     let userId = req.session.passport.user[0].id;
+    // console.log(channelName)
     db.checkForSubscriptions([channelName, userId], function(err, response){
       return res.status(200).json(response)
     })

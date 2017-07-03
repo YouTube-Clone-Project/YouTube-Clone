@@ -98,42 +98,53 @@ export default class ChannelContainer extends Component{
                 videosArr: videosArr.data.items,
             })
             axios.get(`/api/checkForSubscriptions/${ this.state.videosArr[0].snippet.channelTitle }`).then((response)=>{
-                console.log(response)
+                let arr = response.data;
+                if (arr.length === 0){
+                    this.setState({
+                        canSubscribe: true
+                    })
+                }else if (arr.length > 0){
+                    this.setState({
+                        canSubscribe: false
+                    })
+                }
+
+                // if(!this.state.canSubscribe){
+                //     let landingSubscribe = document.getElementById('landing_unsubscribe_bttn');
+                //     let landingUnsubscribe = document.getElementById('landing_unsubscribe_bttn_hover');
+
+                //     landingSubscribe.addEventListener("mouseenter", function(){
+                //         landingSubscribe.style.display = 'none';
+                //         landingUnsubscribe.style.display = 'block';
+                //     })
+                //     landingUnsubscribe.addEventListener("mouseleave", function(){
+                //         landingSubscribe.style.display = 'block';
+                //         landingUnsubscribe.style.display = 'none';
+                //     })
+                    
+                // }
             })
             // console.log(this.state)
         })
-        if(!this.state.canSubscribe){
-            let landingSubscribe = document.getElementById('landing_unsubscribe_bttn');
-            let landingUnsubscribe = document.getElementById('landing_unsubscribe_bttn_hover');
-
-            landingSubscribe.addEventListener("mouseenter", function(){
-                landingSubscribe.style.display = 'none';
-                landingUnsubscribe.style.display = 'block';
-            })
-            landingUnsubscribe.addEventListener("mouseleave", function(){
-                landingSubscribe.style.display = 'block';
-                landingUnsubscribe.style.display = 'none';
-            })
-            
-        }
+        
     }
 
-    componentDidUpdate(){
-        if(!this.state.canSubscribe){
-            let landingSubscribe = document.getElementById('landing_unsubscribe_bttn');
-            let landingUnsubscribe = document.getElementById('landing_unsubscribe_bttn_hover');
+    // componentDidUpdate(){
+    //     if(!this.state.canSubscribe){
+    //         let landingSubscribe = document.getElementById('landing_unsubscribe_bttn');
+    //         let landingUnsubscribe = document.getElementById('landing_unsubscribe_bttn_hover');
 
-            landingSubscribe.addEventListener("mouseenter", function(){
-                landingSubscribe.style.display = 'none';
-                landingUnsubscribe.style.display = 'block';
-            })
-            landingUnsubscribe.addEventListener("mouseleave", function(){
-                landingSubscribe.style.display = 'block';
-                landingUnsubscribe.style.display = 'none';
-            })
+    //         landingSubscribe.addEventListener("mouseenter", function(){
+    //             landingSubscribe.style.display = 'none';
+    //             landingUnsubscribe.style.display = 'block';
+    //         })
+    //         landingUnsubscribe.addEventListener("mouseleave", function(){
+    //             landingSubscribe.style.display = 'block';
+    //             landingUnsubscribe.style.display = 'none';
+    //         })
             
-        }
-    }
+    //     }
+    // }
     
     displayDate(dateStr){
         let dateObj = new Date(dateStr);
@@ -196,9 +207,9 @@ export default class ChannelContainer extends Component{
                 </div>Subscribe</div>
         } else {
             landingSubbtnTwo = <section>
-                    <div id="landing_unsubscribe_bttn" onClick= { ()=> this.handleUnsubscribe(videos[0].snippet.channelTitle) }>
+                    {/*<div id="landing_unsubscribe_bttn" onClick= { ()=> this.handleUnsubscribe(videos[0].snippet.channelTitle) }>
                         <div id="unsub_bttn_img">
-                    </div>Subscribed</div>
+                    </div>Subscribed</div>*/}
                     
                     <div id="landing_unsubscribe_bttn_hover" onClick= { ()=> this.handleUnsubscribe(videos[0].snippet.channelTitle) }>
                         <div id="unsub_bttn_img_hover">

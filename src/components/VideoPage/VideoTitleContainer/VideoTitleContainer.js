@@ -23,6 +23,18 @@ class VideoTitleContainer extends Component {
     }
 
     componentDidMount(){
+        axios.get(`/api/checkForSubscriptions/${ this.props.snippet.channelTitle }`).then((response)=>{
+                let arr = response.data;
+                if (arr.length === 0){
+                    this.setState({
+                        canSubscribe: true
+                    })
+                }else if (arr.length > 0){
+                    this.setState({
+                        canSubscribe: false
+                    })
+                }
+            })
         if(!this.state.canSubscribe){
             let subscribed = document.getElementById('unsubscribe_bttn')
             let unsubscribe = document.getElementById('unsubscribe_bttn_hover')
