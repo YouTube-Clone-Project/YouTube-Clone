@@ -142,7 +142,7 @@ class VideoTitleContainer extends Component {
                                 <div className='video_title_plus_button'></div>
                                 <p>Add to</p>
                             </li>
-                            <li>
+                            <li onClick={ this.props.showShareBox } >
                                 <div className='video_title_share_arrow'></div>
                                 <p>Share</p>
                             </li>

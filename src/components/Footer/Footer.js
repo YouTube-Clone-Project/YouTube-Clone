@@ -37,13 +37,13 @@ export default function footer(props){
             </section>
             <section id="second_row">
                 <ul>
-                    <li>About</li>
-                    <li>Press</li>
-                    <li>Copy Right</li>
-                    <li>Creators</li>
-                    <li>Advertise</li>
-                    <li>Developers</li>
-                    <li>+YouTube</li>
+                    <li><Link to="./About">About</Link></li>    
+                    <li><Link to="./Press">Press</Link></li>
+                    <li><Link to="./Copyright">Copyright</Link></li>
+                    <li><Link to="./Creator">Creators</Link></li>
+                    <li><Link to="./Ads">Advertise</Link></li>
+                    <li><Link to="./Developers">Developers</Link></li>
+                    <li><Link to="./+YouTube">+YouTube</Link></li>
                 </ul>
             </section>
             <section id="third_row">

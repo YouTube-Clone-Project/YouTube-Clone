@@ -5,6 +5,7 @@ import axios from 'axios';
 import SubscriptionNotify from './../SubscribeNotify/SubscribeNotify';
 import UnsubscribeNotify from './../UnsubscribeNotify/UnsubscribeNotify';
 import VideoTitleContainer from './VideoTitleContainer/VideoTitleContainer.js';
+import ShareLinkBox from './ShareLinkBox/ShareLinkBox.js';
 import VideoDescriptionBox from './VideoDescriptionBox/VideoDescriptionBox.js';
 import CommentsContainer from './CommentsContainer/CommentsContainer.js';
 import RecommendedVideosContainer from './RecommendedVideosContainer/RecommendedVideosContainer.js';
@@ -22,12 +23,14 @@ class VideoPage extends Component {
             uniqueId: Math.floor(Math.random()*999),
             notify: false,
             unsubNotify: false,
+            showShareBox: false
         }
 
         this.handleDislike = this.handleDislike.bind(this);
         this.handleSubscription = this.handleSubscription.bind(this);
         this.handleUnsubscription = this.handleUnsubscription.bind(this);
         this.handleLike = this.handleLike.bind(this);
+        this.handleShowSharebox = this.handleShowSharebox.bind(this);
     }
 
     componentDidMount(){
@@ -49,6 +52,7 @@ class VideoPage extends Component {
                 })
             })
         })
+        document.body.scrollTop = 0;
     }
 
     componentDidUpdate(prevProps, prevState){
@@ -72,6 +76,13 @@ class VideoPage extends Component {
                 })
             })
         }
+        document.body.scrollTop = 0;
+    }
+
+    handleShowSharebox(){
+        this.setState({
+            showShareBox: !this.state.showShareBox
+        })
     }
 
     handleLike(){
@@ -125,6 +136,13 @@ class VideoPage extends Component {
         if(this.state.unsubNotify){
             unsubNotifyPrompt = <UnsubscribeNotify/>
         }
+        let shareLinkBox = null;
+        if (this.state.showShareBox){
+            shareLinkBox = <ShareLinkBox 
+                            videoId={ this.state.videoInfo.id } 
+                            />
+        }
+
         return (
             <section className='videopage_main_container'>
                 { notifyPrompt }
@@ -147,7 +165,10 @@ class VideoPage extends Component {
                     handleDislike={ this.handleDislike }
                     notify={ this.handleSubscription }
                     unsubNotify={ this.handleUnsubscription }
-                     />
+                    handleDislike={ this.handleDislike } 
+                    showShareBox={ this.handleShowSharebox } />
+
+                    { shareLinkBox }
                     
                     <VideoDescriptionBox 
                     snippet={ this.state.videoInfo.snippet || {} } />

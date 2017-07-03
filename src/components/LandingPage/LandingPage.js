@@ -51,6 +51,10 @@ class LandingPage extends Component {
         axios.delete(`/api/unsubscribe/${ str }`)
     }
 
+    componentDidMount(){
+        document.body.scrollTop = 0;
+    }
+    
     render() {
         let subscriptionsBttn = null;
         if(this.props.subscription){
