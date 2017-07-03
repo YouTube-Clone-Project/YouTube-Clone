@@ -44,7 +44,15 @@ module.exports = {
     let channelName = req.params.channelName;
     let userId = req.session.passport.user[0].id;
     db.subscribeToChannel([channelName, userId], function(err, response){
-      return res.status(200).send('ok');
+      return res.status(200).send('subscribed');
+    })
+  },
+
+  unsubscribeToChannel: function(req, res, next){
+    let channelName = req.params.channelName;
+    let userId = req.session.passport.user[0].id;
+    db.unsubscribeToChannel([channelName, userId], function(err, response){
+      return res.status(200).send('unsubscribed')
     })
   },
 
@@ -58,6 +66,15 @@ module.exports = {
       res.status(200).send('must be logged in to see subscriptions');
     }
 
+  },
+
+  checkForSubscriptions: function(req, res, next){
+    let channelName = req.params.channelname;
+    let userId = req.session.passport.user[0].id;
+    // console.log(channelName)
+    db.checkForSubscriptions([channelName, userId], function(err, response){
+      return res.status(200).json(response)
+    })
   },
     
   findById: function(accessToken,refreshToken,profile, done){

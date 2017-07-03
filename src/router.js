@@ -3,6 +3,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
 import LandingPage from './components/LandingPage/LandingPage.js';
+import SubscriptionPage from './components/SubscriptionsPage/SubscriptionsPage.js';
 import VideoPage from './components/VideoPage/VideoPage.js';
 import SearchResults from './components/SearchResults/SearchResults.js';
 import LoginPage from './components/LoginPage/LoginPage.js'
@@ -17,6 +18,7 @@ import AboutPage from './components/Footer/Press/About.js'
 export default (
     <Switch>
         <Route component={ LandingPage } path='/' exact />
+        <Route component= { SubscriptionPage } path='/subscriptions'/>
         <Route component={ LoginPage } path ='/login'/>
         <Route component={ VideoPage } path='/video/:videoId' />
         <Route component={SearchResults} path='/search/:userInput' />

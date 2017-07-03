@@ -69,9 +69,11 @@ app.get('/auth/callback', passport.authenticate('google', { failureRedirect: '/L
 
 //////////Other endpoints for the front end
 app.get('/api/comments/:videoId', userController.getCommentsByVideo);
+app.get('/api/checkForSubscriptions/:channelname', userController.checkForSubscriptions)
 app.get('/api/subscriptions', userController.getUserSubscriptions);
 app.post('/api/comments/:videoId', userController.postCommentToVideo);
 app.post('/api/subscribe/:channelName', userController.subscribeToChannel);
 
+app.delete('/api/unsubscribe/:channelName', userController.unsubscribeToChannel)
 
 app.listen(config.port,console.log("you are now connected on 3000, database should work too"));

@@ -1,0 +1,124 @@
+a{
+    text-decoration: none;
+    color: black;
+    cursor: default;
+}
+#main_subscriptions_video_container{
+    width: 100%;
+    height: 210px;
+    position: relative;
+    border-bottom: 2px solid #fff;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-top: 15px;
+}
+
+.subscriptions_info_container{
+    height: 156px;
+    width: 200px;
+    margin-top: 30px;
+    line-height: 6px;
+    /*background: lightcyan;*/
+    position: relative;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+#subscriptions_info_img{
+    height: 110px;
+    width: 196px;
+    /*border: 2px solid black;*/
+    cursor: pointer;
+}
+.subscriptions_info_container h1{
+    font-size: 13px;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #167ac6;
+    /*text-overflow: ellipsis;*/
+    height: 37px;
+    width: 97%;
+    font-weight: 600;
+    margin-top: 5px;
+    line-height: 14px;
+    /*white-space: nowrap;
+    overflow: hidden;*/
+    /*border: 2px solid black;*/
+}
+
+.subscriptions_info_container h1:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.subscriptions_info_container h2{
+    font-size: 11px;
+    color: #767676;
+    font-weight: 200;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    width: 95%;
+    height: 8px;
+    padding-top: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: 'Roboto Condensed', sans-serif;
+    }
+
+.subscriptions_info_container h2:hover{
+    color: #167ac6;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.subscriptions_info_container ul{
+    font-size: 11px;
+    color: #767676;
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative
+}
+.subscriptions_info_container li{
+    font-size: 11px;
+    display: inline;
+    color: #767676;
+    font-family: 'Roboto Condensed', sans-serif;
+    position: relative;
+    padding-right: 4px;
+}
+
+.subscriptions_info_container li img{
+    height: 2px;
+    width: 2px;
+    position: absolute;
+    left: -1px;
+    top: 6px;
+    opacity: 0.5; 
+}
+
+.subscriptions_info_container .watch_container{
+    height: 22px;
+    width: 22px;
+    background: #eeeeee;
+    border: 1px solid #b8b8b8;
+    border-radius: 3px;
+    position: absolute;
+    top: 85px;
+    left: 169px;
+    display: none;
+    cursor: pointer;
+}
+
+.subscriptions_info_container:hover .watch_container{
+    display: block;
+}
+.subscriptions_info_container .watch_container #watch_later{
+    height: 14px;
+    width: 14px;
+    opacity: 0.6;
+    position: absolute;
+    top: calc(50% - 7px);
+    left: calc(50% - 7px)
+}
