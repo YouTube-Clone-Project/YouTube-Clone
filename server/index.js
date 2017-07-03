@@ -74,4 +74,4 @@ app.post('/api/comments/:videoId', userController.postCommentToVideo);
 app.post('/api/subscribe/:channelName', userController.subscribeToChannel);
 
 
-app.listen(3000,console.log("you are now connected on 3000, database should work too"));
+app.listen(config.port,console.log("you are now connected on 3000, database should work too"));
