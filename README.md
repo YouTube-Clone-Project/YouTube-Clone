@@ -1,33 +1,3 @@
-## Team Instructions
-
-# Daily Steps For Working On This Repo
-
-1. Make sure you are on your computer's master branch.
-2. git pull.
-
-## To Work On A New Feature
-
-3. git checkout -b new-branch-name (pick a name for your new branch)
-4. Do your normal work on your computer, but do everything on your new branch.
-5. As you go, use add . & commit -m '' like normal to save your work to your new branch that you have created for the day. 
-
-## To Work On The Same Feature You've Been Working On
-
-3. git checkout branch-name (name of the branch you're working on)
-4. git merge master (this updates your working branch to be current with the master branch).
-5. Do your normal work on your computer, but do everything on your new branch. As you go, use add . & commit -m '' like normal to save your work to your alternate branch that you are working on for the day.
-_____________________________________________________________
-## To Push Your Changes To Github
-
-6. git checkout master
-7. git pull
-8. git checkout name-of-the-branch-you-created
-9. git merge master (if there are any conflicts, you will fix them at this point. If it says there are merge conflicts, open up the project again in your code editor, and search for HEAD. this will show you the merge conflicts, and you can fix them in there. Ask a mentor for help if needed).
-10. git add .
-11. git commit -m 'fixed merge conflicts'
-12. git push -u origin name-of-the-branch-you-created
-13. Do a 'pull request' on Github.
-
 # YouTube Clone - React With Redux
 
 
@@ -46,8 +16,16 @@ Massive
 PostgreSQL
 Passport/OAuth
 
-## To Use This App
+## Contributors
 
-1. Fork and clone this repo
-2. run 'npm i' in the terminal / Git Bash
-3. run 'npm start' in the terminal / Git Bash
+### Loren Pabst
+Loren worked mainly on the video page. Loren built the components on that page, including making the main video play, the API call to get recommended videos on the side, the title, description, and comments for the current video, and the 'share' link that auto-populates when clicked on. 
+
+### Jessica Pabst
+Jessica built the header, footer, landing (home) page, search page, and subscriptions page. The search page API returns results relevant to the search term. The subscriptions page is user specific, and the landing page allows the user to subscribe/unsubscribe from channels with those actions being recorded in the database.
+
+### Ivor Anderson
+Ivor built the Sidebar nav, the press page, about page, copyright page, creators page, advertise page, developers page, +youtube page, and 'the team' page. Ivor also helped develop a color coded system for tracking who was working on which part of the project, in order to avoid merge conflicts.
+
+### Reed Mohorn
+Reed built the server, the database, the login page on the front end, and all of the login/Auth0 functionality. Reed also built all of the back end endpoints, and helped teach team members about the auth0 functionality, and how to set it up.
