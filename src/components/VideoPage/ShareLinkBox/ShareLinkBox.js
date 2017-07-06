@@ -23,10 +23,13 @@ class ShareLinkBox extends Component {
         }
     }
 
-    componentDidUpdate(){
-        this.setState({
-            url: `https://youtu.be/${ this.props.videoId }`
-        })
+    componentDidUpdate(prevProps){
+        if (this.props != prevProps){
+            this.setState({
+                url: `https://youtu.be/${ this.props.videoId }`
+            })
+            console.log('hi');
+        }
     }
 
     handleURLChange(e){
@@ -42,6 +45,7 @@ class ShareLinkBox extends Component {
     }
 
     markCheckBox(){
+        console.log('hi')
         let time = this.state.startTime.slice();
         let min, sec;
         if (time.indexOf(':') > 0){
