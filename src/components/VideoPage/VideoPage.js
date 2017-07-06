@@ -76,7 +76,7 @@ class VideoPage extends Component {
                 })
             })
         }
-        document.body.scrollTop = 0;
+        // document.body.scrollTop = 0;
     }
 
     handleShowSharebox(){
