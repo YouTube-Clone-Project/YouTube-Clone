@@ -47,7 +47,7 @@ export default class Header extends Component {
 			width: 280, 
 			paddingTop:'0px', 
             position: 'fixed', 
-            top: '57px',
+            top: '56px',
 			zIndex: '1700' }
 		})
 		return this.state.css;

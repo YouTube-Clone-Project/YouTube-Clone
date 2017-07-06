@@ -1,17 +1,12 @@
 import React, { Component } from 'react';
 
 export default class CopyrightPage extends Component {
-    constructor(props){
-        super(props);
-    }
 
-    componentDidMount(){
-        document.body.scrollTop = 0;
-    }
-    
     render() {
+        window.scrollTo(0, 0)
         return (
-            <img id='bkgrnd' src={require('./pressImg/copyright.jpg')}
+            <img src={require('./pressImg/copyright.jpg')}
+                alt={''}
                 style={{ width: '100%', height: 'null' }}>
             </img>
         )

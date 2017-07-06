@@ -14,6 +14,9 @@ import AdsPage from './components/Footer/Press/Ads.js'
 import DevelopersPage from './components/Footer/Press/Developers.js'
 import plusYTPage from './components/Footer/Press/+YouTube.js'
 import AboutPage from './components/Footer/Press/About.js'
+import TeamPage from './components/Footer/Press/Team.js'
+import MoviePage from './components/Footer/Press/Movie.js'
+
 
 export default (
     <Switch>
@@ -28,9 +31,9 @@ export default (
         <Route component={AdsPage} path='/Ads' />
         <Route component={DevelopersPage} path='/Developers' />
         <Route component={plusYTPage} path='/+YouTube' />
-        <Route component={ AboutPage } path='/About' />
-
-
+        <Route component={AboutPage} path='/About' />
+        <Route component={TeamPage} path='/Team' />
+        <Route component={ MoviePage } path='/Movie' />
 
     </Switch>
 )

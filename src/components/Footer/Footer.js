@@ -44,6 +44,7 @@ export default function footer(props){
                     <li><Link to="./Ads">Advertise</Link></li>
                     <li><Link to="./Developers">Developers</Link></li>
                     <li><Link to="./+YouTube">+YouTube</Link></li>
+                    <li><Link to="./Team">The Team</Link></li>
                 </ul>
             </section>
             <section id="third_row">

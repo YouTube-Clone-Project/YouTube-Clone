@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 
 export default class CreatorPage extends Component {
-    constructor(props){
-        super(props);
-    }
-
-    componentDidMount(){
-        document.body.scrollTop = 0;
-    }
-    
     render() {
+        window.scrollTo(0, 0)
         return (
-            <img id='bkgrnd' src={require('./pressImg/creator.jpg')}
+            <img src={require('./pressImg/creator.jpg')}
+                alt={''}
                 style={{ width: '100%', height: 'null' }}>
             </img>
         )

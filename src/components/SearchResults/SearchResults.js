@@ -219,7 +219,6 @@ class SearchResults extends Component{
                         <div id="next_bttn" onClick={ this.getNextPage }><p>Next &#187;</p></div>
                     </section>
                 </section>
-                
             </section>
         )
     }

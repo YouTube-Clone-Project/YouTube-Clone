@@ -1,6 +1,5 @@
-// Install the following dependency "npm install --save-dev react-sidenav"
-
 import React from 'react';
+import { Route,Link } from 'react-router-dom';
 import SideNav, { Nav, NavIcon, NavText } from 'react-sidenav';
 import './HamburgerDropdown.css';
   
@@ -61,9 +60,11 @@ function MySideNav (props) {
 				<NavText><icon4> + </icon4><item2>&nbsp; &nbsp; Browse channels</item2></NavText>
             </Nav>
 			<hr></hr>
-			<Nav id='YTmovies'>
-				<NavText><icon1> ® </icon1><item1>&nbsp; &nbsp; YouTube Movies</item1></NavText>
-            </Nav>
+			<Link to='./Movie'>	
+				<Nav id='YTmovies'>
+					<NavText><icon1> ® </icon1><item1>&nbsp; &nbsp; YouTube Movies</item1></NavText>
+				</Nav>
+			</Link>		
 			<br></br><br></br>
         </SideNav>
     </div>
