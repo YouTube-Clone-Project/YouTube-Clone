@@ -1,0 +1,293 @@
+
+.video_title_wrapper{
+    width: 100%;
+    height: 170px;
+    position: relative;
+}
+
+.video_title_container{
+    width: 855px;
+    height: 150px;
+    background: #fff;
+    padding: 15px 15px 15px 15px;
+    position: absolute;
+    left: 35px;
+    top: 10px;
+}
+
+.video_title{
+    width: 700px;
+    height: 19px;
+    font-size: 18px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.channel_thumbnail{
+    width: 48px;
+    height: 48px;
+    background: #333;
+}
+
+.channel_container{
+    width: 400px;
+    height: 50px;
+    position: absolute;
+    left: 68px;
+    top: 44px;
+}
+
+.channel_title{
+    height: 12px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    overflow: hidden;
+}
+
+.subscribe_button{
+    width: 130px;
+    height: 25px;
+    background: #e62117;
+    color: white;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 25px;
+    position: relative;
+    padding-left: 27px;
+    padding-top: 1px;
+    cursor: pointer;
+}
+
+.unsubscribe_button{
+    width: 130px;
+    height: 25px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    color: black;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 25px;
+    position: relative;
+    padding-left: 27px;
+    padding-top: 1px;
+    cursor: pointer;
+}
+.unsubscribe_button_hover{
+    width: 130px;
+    height: 25px;
+    border: 1px solid #ccc;
+    background-color: #f8f8f8;
+    color: black;
+    border-radius: 3px;
+    font-size: 12px;
+    line-height: 25px;
+    position: relative;
+    padding-left: 27px;
+    padding-top: 1px;
+    cursor: pointer;
+    display:none;
+    
+}
+
+.unsubscribe_play_button_hover{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -479px -214px;
+    background-size: auto;
+    width: 16px;
+    height: 12px;
+    position: absolute;
+    left: 2px;
+    top: 6px;
+}
+
+#unsubscribe_words{
+    position: absolute;
+    opacity: 0.6;
+    right: 41px;
+}
+
+#subscribe_words{
+    position: absolute;
+    opacity: 0.6;
+    right: 44px;
+}
+
+.subscribe_button:hover{
+    background: #cc181e;
+}
+
+.unsubscribe_play_button{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -898px -128px;
+    background-size: auto;
+    width: 16px;
+    height: 12px;
+    position: absolute;
+    left: 5px;
+    top: 6px;
+}
+
+.subscribe_play_button{
+    background: no-repeat url('//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp') -721px -88px;
+    background-size: auto;
+    width: 16px;
+    height: 12px;
+    position: absolute;
+    left: 7px;
+    top: 6px;
+    border-radius: 2px;
+}
+.num_subscribers_box{
+    width: 38px;
+    height: 25px;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 40;
+    font-size: 11px;
+    text-align: center;
+    line-height: 25px;
+    color: #888;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+.num_subscribers_box_unsub{
+    width: 38px;
+    height: 25px;
+    background: white;
+    border: 1px solid #ccc;
+    z-index: 40;
+    font-size: 11px;
+    text-align: center;
+    line-height: 25px;
+    color: #888;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.video_view_count{
+    font-size: 19px;
+    font-weight: 300;
+    color: #777;
+    position: absolute;
+    right: 17px;
+    bottom: 40px;
+}
+
+.video_title_line{
+    width: 96%;
+    height: 1px;
+    background: #ccc;
+    position: absolute;
+    left: 2%;
+    bottom: 50px;
+}
+
+.video_title_bottom{
+    width: 100%;
+    height: 35px;
+    position: absolute;
+    bottom: 0px;
+    color: #000;
+}
+
+.add_share_list{
+    width: 30%;
+    height: 35px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+}
+
+.add_share_list li{
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.add_share_list li:hover{
+    opacity: 0.6;
+}
+
+.video_title_plus_button{
+    background: no-repeat url('//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp') -813px -232px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+}
+
+.video_title_share_arrow{
+    background: no-repeat url('//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp') -822px -88px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+}
+
+.video_title_more_dots{
+    background: no-repeat url('//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp') -675px -148px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+}
+
+.like_dislike_list{
+    width: 20%;
+    height: 35px;
+    position: absolute;
+    right: 20px;
+    bottom: 0px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+}
+
+.like_dislike_list li{
+    width: 80px;
+    height: 20px;
+    line-height: 20px;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.like_dislike_list li:hover{
+    opacity: 0.6;
+}
+
+.video_title_like_thumb{
+    background: no-repeat url('//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp') -775px -112px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+}
+
+.video_title_dislike_thumb{
+    background: no-repeat url(//s.ytimg.com/yts/imgbin/www-hitchhiker-vflXBOoAR.webp) -807px -200px;
+    background-size: auto;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    left: 5px;
+    top: 0px;
+}

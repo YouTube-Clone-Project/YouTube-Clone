@@ -1,0 +1,130 @@
+#side-nav {
+    position: fixed;
+    top: relative;
+    
+}
+
+#home {
+    background: '#d0171f';
+    color: #fff;
+    width: 90%;
+    padding-left: 5%;
+}
+iconH {
+    font-size: 25px;
+    font-weight: bold;
+    font-family:  'Webdings';
+}
+
+itemH {
+    font-weight: bold;
+    margin-top: 6px;
+    height: 23px;
+}
+
+item1 {
+    margin-top: 2px;
+    height: 23px;
+}
+
+item2 {
+    margin-top: 2px;
+    height: 23px;
+    text-align: left;
+}
+
+icon1 {
+    font-size: 25px;
+    font-family:  'Webdings';
+    text-align: left;
+    margin-left:  -15px;
+}
+
+icon2 {
+    font-size: 25px;
+    font-family:  'Wingdings';
+    margin-left: -5px;
+    text-align: left;
+}
+
+icon3 {
+    font-size: 20px;
+    font-family:  'Webdings';
+    background: #d0171f;
+    color:  white;
+    border-radius: 25%;
+    width: 25px;
+    padding-left: 6px;
+    margin-left: -15px;
+    margin-top: 5px;
+}
+icon3:hover{
+    font-size: 20px;
+    font-family:  'Webdings';
+    background: #fff;
+    color:  #444444;
+    border-radius: 25%;
+    width: 25px;
+    padding-left: 6px;
+    margin-left: -10px;
+    margin-top: 4px;
+    text-align: left;
+}
+
+icon4 {
+    font-weight: bold;
+    height: 23px;
+    width: 19px;
+    font-size: 23px;
+    color:  white;
+    background: #888888;
+    border-radius: 50%;
+    padding-left: 6px;
+    margin-left: -16px;
+    text-align: left;
+}
+
+h4 {
+    font-size: 15px;
+    padding-left:  35px;
+    color:  #db2532;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+}
+h4:hover {
+    font-size: 16px;
+    padding-left:  35px;
+    color:  #db2532;
+    font-family: 'Arial Narrow';
+    font-weight: bold;
+    text-decoration:  underline;
+    cursor: pointer;
+}
+hr {
+    border: .5px solid #eeeeee;
+    width: 86%;
+}
+icon6 {
+    font-size: 25px;
+    font-family:  'Webdings';
+    text-align: left;
+    margin-left: -11px;
+}
+icon7 {
+    font-size: 25px;
+    font-family:  'Wingdings';
+    margin-left: -9px;
+    text-align: left;
+}
+icon8 {
+    font-size: 25px;
+    font-family:  'Wingdings';
+    margin-left: -12px;
+    text-align: left;
+}
+icon9 {
+    font-size: 25px;
+    font-family:  'Wingdings';
+    margin-left: -10px;
+    text-align: left;
+}
