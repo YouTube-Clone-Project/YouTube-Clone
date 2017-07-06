@@ -7,18 +7,18 @@ export default class plusYTPage extends Component {
     render() {
         window.scrollTo(0, 0)
         return (
-            <div style={{top: '-3630', height: '3460', position: 'relative', padding: '0', margin: '0'}}>
-                <div style={{top: '6180px', position: 'relative', left: '974px', zIndex: '1100', padding: '0', margin: '0'}}>
+            <div style={{top: '-2940', height: '3460', position: 'relative', padding: '0', margin: '0'}}>
+                <div style={{top: '4180px', position: 'absolute', right: '110px', zIndex: '1100', padding: '0', margin: '0'}}>
                     <img src={require('./pressImg/SHARK.gif')}
-                        style={{ width: '27%', height: 'null' }}>
+                        style={{ width: '70%', height: 'auto' }}>
                     </img>    
                 </div>
-                <div style={{top: '6427px', position: 'relative', left: '974px', zIndex: '1100', padding: '0', margin: '0'}}>
+                <div style={{top: '2985', position: 'relative', left: '715px', zIndex: '1100', padding: '0', margin: '0'}}>
                     <img src={require('./pressImg/CLOUD2.gif')}
-                        style={{ width: '27%', height: 'null' }}>
+                        style={{ width: '24%', height: 'null' }}>
                     </img>    
                 </div>
-                <div style={{top: '3907px', position: 'relative', left: '974px', zIndex: '1100', padding: '0', margin: '0'}}>
+                <div style={{top: '2985px', position: 'relative', left: '715px', zIndex: '1100', padding: '0', margin: '0'}}>
                     <img src={require('./pressImg/CAT.gif')}
                         style={{ width: '27%', height: 'null' }}>
                     </img>    
