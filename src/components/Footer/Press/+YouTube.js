@@ -69,7 +69,7 @@ export default class plusYTPage extends Component {
                     </img>    
                 </div> 
                 <div style={{zIndex:'500'}}>    
-                    <img src={require('./pressImg/plusYT.jpg')}
+                    <img src={require('./pressImg/plusYTBlank.jpg')}
                         style={{ width: '100%', height: '100%' , padding: '0', margin: '0'}}>
                     </img>
                 </div>
