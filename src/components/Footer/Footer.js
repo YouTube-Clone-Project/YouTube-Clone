@@ -43,7 +43,7 @@ export default function footer(props){
                     <li><Link to="./Creator">Creators</Link></li>
                     <li><Link to="./Ads">Advertise</Link></li>
                     <li><Link to="./Developers">Developers</Link></li>
-                    <li>+YouTube</li>
+                    <li><Link to="./+youtube">+YouTube</Link></li>
                     <li><Link to="./Team">The Team</Link></li>
                 </ul>
             </section>
