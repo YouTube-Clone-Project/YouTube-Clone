@@ -234,6 +234,23 @@
     cursor: pointer;
 }
 
+#the_team{
+    width: 220px;
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px;
+    text-align: center;
+    font-weight: bold;
+    position: fixed;
+    right: 100px;
+    top: 70px;
+    background: #f33;
+    opacity: 0.7;
+    border-radius: 3px;
+    cursor: pointer;
+    z-index: 9000;
+}
+
 #third_row{
     /*border: 2px solid lime;*/
     width: 523px;
