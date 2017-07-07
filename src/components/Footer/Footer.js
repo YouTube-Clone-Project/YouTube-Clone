@@ -47,7 +47,7 @@ export default function footer(props){
                     <li><Link to="./Team">The Team</Link></li>
                 </ul>
             </section>
-            <div id='the_team'><Link to="./Team">Click Here!</Link></div>
+            <div id='the_team'><Link to="./Team">See The Team!</Link></div>
             <section id="third_row">
                 <ul>
                     <li>Terms</li>

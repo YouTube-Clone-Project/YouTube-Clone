@@ -235,10 +235,10 @@
 }
 
 #the_team{
-    width: 200px;
-    height: 36px;
-    font-size: 34px;
-    line-height: 36px;
+    width: 220px;
+    height: 40px;
+    font-size: 30px;
+    line-height: 40px;
     text-align: center;
     font-weight: bold;
     position: fixed;
